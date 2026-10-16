@@ -1559,6 +1559,45 @@ async function loadAuditLogs() {
   }
 }
 
+function toCyrillic(str) {
+  if (!str || !/[a-zA-Z]/.test(str)) return str;
+  const dict = {
+    'BLAGOCHINIYE': 'БЛАГОЧИНИЕ',
+    'SLAVILSHCHIK': 'СЛАВИЛЬЩИК',
+    'SLAVIL\'SHCHIK': 'СЛАВИЛЬЩИК',
+    'ZIZIFUS': 'ЗИЗИФУС',
+    'PASKOIT': 'ПАСКОИТ',
+    'GASHENIE': 'ГАШЕНИЕ',
+    'NIZKIJ': 'НИЗКИЙ',
+    'METROKIN': 'МЕТРОКИН',
+    'GALBAN': 'ГАЛБАН',
+    'EKSGORRAN': 'ЭКСГОРРАН',
+    'LEVICHAR': 'ЛЕВИЧАР',
+    'MDZHB': 'МДЖБ',
+    'UZB76': 'УЗБ-76',
+    'ZHUOZ': 'ЖУОЗ',
+    'ANVF': 'АНВФ',
+    'NZHTI': 'НЖТИ'
+  };
+
+  return str.replace(/[A-Za-z']+/g, (match) => {
+    const upper = match.toUpperCase().replace(/'/g, '');
+    if (dict[upper]) return dict[upper];
+    let w = upper;
+    const rules = [
+      ['SHCH', 'Щ'], ['ZH', 'Ж'], ['KH', 'Х'], ['TS', 'Ц'], ['CH', 'Ч'], ['SH', 'Ш'],
+      ['LSHCH', 'ЛЬЩ'], ['YE', 'Е'], ['YU', 'Ю'], ['YA', 'Я'], ['IY', 'И'], ['IJ', 'ИЙ'],
+      ['A', 'А'], ['B', 'Б'], ['V', 'В'], ['G', 'Г'], ['D', 'Д'], ['E', 'Е'], ['Z', 'З'],
+      ['I', 'И'], ['J', 'Й'], ['K', 'К'], ['L', 'Л'], ['M', 'М'], ['N', 'Н'], ['O', 'О'],
+      ['P', 'П'], ['R', 'Р'], ['S', 'С'], ['T', 'Т'], ['U', 'У'], ['F', 'Ф'], ['Y', 'Ы']
+    ];
+    for (const [lat, cyr] of rules) {
+      w = w.replaceAll(lat, cyr);
+    }
+    return w;
+  });
+}
+
 // 7. Messages Explorer
 let currentMsgPage = 1;
 async function loadMessagesTable(page = 1) {
@@ -1599,13 +1638,20 @@ async function loadMessagesTable(page = 1) {
       const qText = (qualityMap[currentLang] && qualityMap[currentLang][m.quality_flag]) || m.quality_flag;
       const qColor = m.quality_flag === 'NORMAL' ? 'badge-emerald' 
                    : (m.quality_flag === 'UNCERTAIN_TRANSCRIPTION' ? 'badge-amber' : 'badge-cyan');
+      const wordSeq = currentLang === 'ru' ? toCyrillic(m.full_word_sequence) : m.full_word_sequence;
+      let displayCallsign = m.callsign || '—';
+      if (currentLang === 'ru' && displayCallsign.includes('/')) {
+        const parts = displayCallsign.split('/');
+        const p2 = parts[1].trim();
+        displayCallsign = (p2 && !p2.includes('')) ? p2 : toCyrillic(parts[0].trim());
+      }
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td class="mono-cell"><strong>${m.date}</strong></td>
         <td class="mono-cell">${m.time_as_logged || '—'}</td>
-        <td class="mono-cell"><span class="badge badge-cyan">${m.callsign || '—'}</span></td>
+        <td class="mono-cell"><span class="badge badge-cyan">${displayCallsign}</span></td>
         <td class="mono-cell">${m.header_number || '—'}</td>
-        <td class="mono-cell"><strong>${m.full_word_sequence}</strong></td>
+        <td class="mono-cell"><strong>${wordSeq}</strong></td>
         <td class="mono-cell"><span class="badge ${qColor}">${qText}</span></td>
         <td class="mono-cell"><small>${m.source_file}:${m.source_line}</small></td>
       `;
