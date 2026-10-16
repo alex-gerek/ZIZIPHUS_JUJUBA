@@ -60,6 +60,41 @@
     <!-- 1. OVERVIEW TAB -->
     <div id="tab-overview" class="tab-pane active">
 
+      <!-- 0. HOW THIS WHOLE THING STARTED (AUTHOR'S DISPATCH) -->
+      <section class="story-card" aria-labelledby="story-heading">
+        <div class="story-header">
+          <div class="story-header-left">
+            <span class="story-badge" data-i18n="story_badge">ЗАПИСКИ АВТОРА · ЛЕКС</span>
+            <h3 id="story-heading" class="story-title" data-i18n="story_title">Как всё это началось</h3>
+          </div>
+          <button type="button" id="story-toggle-btn" class="story-collapse-btn" data-i18n="story_collapse">Свернуть</button>
+        </div>
+        <div id="story-body-content" class="story-body" data-i18n-html="story_html">
+          <p>Вообще-то я не собирался создавать лабораторию анализа радиосигналов.</p>
+          <p>Серьёзно. Даже в списке моих идиотских идей такого не было.</p>
+          <p>Всё началось с сообщения <a href="https://x.com/Dormedont4?s=20" target="_blank" rel="noopener noreferrer" class="story-link">Борщёва</a> об УВБ-76 — той самой странной коротковолновой радиостанции, которую называют The Buzzer.</p>
+          <p>Мне стало любопытно. Полез на GitHub, начал копаться в архивах радиограмм.</p>
+          <p>И тут зацепился за одно слово.</p>
+          <p class="story-highlight">ЗИЗИФУС.</p>
+          <p>Стоп. Я же знаю это слово.</p>
+          <p><em>Ziziphus jujuba.</em> Китайский финик. Его латинское ботаническое название.</p>
+          <p>Забавно, какие совершенно бесполезные на первый взгляд вещи иногда хранит память.</p>
+          <p>И тут мне стало интересно: а что вообще можно узнать из этих сообщений, если не знаешь, что они означают?</p>
+          <p>Повторяются ли слова? Связаны ли они с определёнными числовыми группами? Есть ли закономерности во времени передач? Можно ли обнаружить какую-то структуру во всём этом?</p>
+          <p>Один вопрос потянул за собой другой.</p>
+          <p>Потом появились архивы, Python, статистика, графы связей, математические модели и совершенно неприличное количество открытых вкладок в браузере.</p>
+          <p>В какой-то момент я обнаружил, что вместо ответа на один случайный вопрос у меня получился целый исследовательский проект.</p>
+          <p class="story-subheading">ZIZIPHUS JUJUBA — Signal Intelligence &amp; Pattern Analysis Lab.</p>
+          <p>Нет, я не расшифровал секретные сообщения. И понятия не имею, что они означают.</p>
+          <p>Мне интересно другое.</p>
+          <p class="story-question">Можно ли обнаружить закономерности в радиообмене, не зная содержания сообщений?</p>
+          <p>Вот этим я теперь и занимаюсь.</p>
+          <p>И да, всё началось с китайского финика.</p>
+          <p>Довольно идиотская история.</p>
+          <p class="story-closing">Но вот мы здесь.</p>
+        </div>
+      </section>
+
       <!-- 1. INTRODUCTORY HERO SECTION -->
       <div class="overview-hero">
         <h2 data-i18n="hero_title">Можно ли обнаружить закономерности в радиообмене, не зная содержания сообщений?</h2>
@@ -176,32 +211,32 @@
         </div>
         <div class="pipeline-flow">
           <div class="pipeline-step">
-            <div class="pipeline-step-num">Этап 01</div>
+            <div class="pipeline-step-num" data-i18n="pipe_num_1">Этап 01</div>
             <div class="pipeline-step-title" data-i18n="pipe_s1_name">1. Открытые архивы</div>
             <div class="pipeline-step-desc" data-i18n="pipe_s1_desc">Сбор первичных журналов радионаблюдений за 2010–2022 гг. из открытых независимых источников.</div>
           </div>
           <div class="pipeline-step">
-            <div class="pipeline-step-num">Этап 02</div>
+            <div class="pipeline-step-num" data-i18n="pipe_num_2">Этап 02</div>
             <div class="pipeline-step-title" data-i18n="pipe_s2_name">2. Проверка и очистка</div>
             <div class="pipeline-step-desc" data-i18n="pipe_s2_desc">Нормализация текста, аудит дубликатов, устранение технических артефактов и выделение кодоблоков.</div>
           </div>
           <div class="pipeline-step">
-            <div class="pipeline-step-num">Этап 03</div>
+            <div class="pipeline-step-num" data-i18n="pipe_num_3">Этап 03</div>
             <div class="pipeline-step-title" data-i18n="pipe_s3_name">3. Статистический анализ</div>
             <div class="pipeline-step-desc" data-i18n="pipe_s3_desc">Расчёт суточных профилей, интервалов Δt, коэффициентов вариации и распределений активности.</div>
           </div>
           <div class="pipeline-step">
-            <div class="pipeline-step-num">Этап 04</div>
+            <div class="pipeline-step-num" data-i18n="pipe_num_4">Этап 04</div>
             <div class="pipeline-step-title" data-i18n="pipe_s4_name">4. Графы связей</div>
             <div class="pipeline-step-desc" data-i18n="pipe_s4_desc">Построение топологических сетей совместной встречаемости слов и мостовых цифровых комбинаций.</div>
           </div>
           <div class="pipeline-step">
-            <div class="pipeline-step-num">Этап 05</div>
+            <div class="pipeline-step-num" data-i18n="pipe_num_5">Этап 05</div>
             <div class="pipeline-step-title" data-i18n="pipe_s5_name">5. Проверка гипотез</div>
             <div class="pipeline-step-desc" data-i18n="pipe_s5_desc">Применение тестов перестановок Монте-Карло, модифицированных Z-оценок и многооконных Event-Study.</div>
           </div>
           <div class="pipeline-step">
-            <div class="pipeline-step-num">Этап 06</div>
+            <div class="pipeline-step-num" data-i18n="pipe_num_6">Этап 06</div>
             <div class="pipeline-step-title" data-i18n="pipe_s6_name">6. Исследовательские выводы</div>
             <div class="pipeline-step-desc" data-i18n="pipe_s6_desc">Фиксация подтверждённых эмпирических фактов, отсеивание мифов и документирование ограничений.</div>
           </div>
@@ -324,8 +359,8 @@
     <div id="tab-targets" class="tab-pane">
       <div class="section-header">
         <div>
-          <h2>Целевые сигналы: ЗИЗИФУС, ПАСКОИТ, ГАШЕНИЕ, НИЗКИЙ</h2>
-          <p>Специальное исследование ключевых кодовых слов и верификация совпадения комбинации 7724 8209 по первичным записям.</p>
+          <h2 data-i18n="targets_title">Целевые сигналы: ЗИЗИФУС, ПАСКОИТ, ГАШЕНИЕ, НИЗКИЙ</h2>
+          <p data-i18n="targets_desc">Специальное исследование ключевых кодовых слов и верификация совпадения комбинации 7724 8209 по первичным записям.</p>
         </div>
       </div>
       
@@ -336,25 +371,25 @@
         </p>
       </div>
 
-      <h3 style="margin-bottom:1rem; font-size:1.1rem; color:var(--color-cyan);">Первичные записи комбинации 7724 8209</h3>
+      <h3 style="margin-bottom:1rem; font-size:1.1rem; color:var(--color-cyan);" data-i18n="targets_h_7724">Первичные записи комбинации 7724 8209</h3>
       <div class="table-container">
         <table>
           <thead>
             <tr>
-              <th>Дата</th>
-              <th>Время (UTC)</th>
-              <th>Кодовое слово</th>
-              <th>Цифровая группа</th>
-              <th>Полный текст радиограммы</th>
-              <th>Источник и строка в журнале</th>
+              <th data-i18n="targets_col_date">Дата</th>
+              <th data-i18n="targets_col_time">Время (UTC)</th>
+              <th data-i18n="targets_col_word">Кодовое слово</th>
+              <th data-i18n="targets_col_digits">Цифровая группа</th>
+              <th data-i18n="targets_col_msg">Полный текст радиограммы</th>
+              <th data-i18n="targets_col_source">Источник и строка в журнале</th>
             </tr>
           </thead>
           <tbody id="target-7724-body"></tbody>
         </table>
       </div>
 
-      <h3 style="margin-top:2rem; margin-bottom:1rem; font-size:1.1rem; color:var(--color-amber);">Эхо-триплет: Структурный повтор 3 радиограмм (Сентябрь — Октябрь 2014)</h3>
-      <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;">
+      <h3 style="margin-top:2rem; margin-bottom:1rem; font-size:1.1rem; color:var(--color-amber);" data-i18n="targets_h_triplet">Эхо-триплет: Структурный повтор 3 радиограмм (Сентябрь — Октябрь 2014)</h3>
+      <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.85rem;" data-i18n="targets_triplet_desc">
         Три последовательные радиограммы 4 сентября 2014 года повторились с теми же числами 1-2 октября 2014 года:
         ГАЛБАН / МЕТРОКИН (8423 2962), ПАСКОИТ / ЗИЗИФУС (7724 8209), ЭКСГОРРАН / ЛЕВИЧАР (3180 9240).
       </p>
@@ -362,29 +397,29 @@
         <table>
           <thead>
             <tr>
-              <th>Дата</th>
-              <th>Время</th>
-              <th>Кодовое слово</th>
-              <th>Цифры (8 знаков)</th>
-              <th>Заголовок</th>
-              <th>Файл и строка</th>
+              <th data-i18n="targets_col_date">Дата</th>
+              <th data-i18n="col_time">Время</th>
+              <th data-i18n="targets_col_word">Кодовое слово</th>
+              <th data-i18n="targets_col_digits8">Цифры (8 знаков)</th>
+              <th data-i18n="targets_col_header">Заголовок</th>
+              <th data-i18n="targets_col_file">Файл и строка</th>
             </tr>
           </thead>
           <tbody id="triplet-echo-body"></tbody>
         </table>
       </div>
 
-      <h3 style="margin-top:2rem; margin-bottom:1rem; font-size:1.1rem; color:var(--text-primary);">Все радиограммы с участием целевых слов</h3>
+      <h3 style="margin-top:2rem; margin-bottom:1rem; font-size:1.1rem; color:var(--text-primary);" data-i18n="targets_h_all">Все радиограммы с участием целевых слов</h3>
       <div class="table-container">
         <table>
           <thead>
             <tr>
-              <th>Дата</th>
-              <th>Время</th>
-              <th>Кодовое слово</th>
-              <th>Цифры (4+4)</th>
-              <th>5-значный заголовок</th>
-              <th>Источник</th>
+              <th data-i18n="targets_col_date">Дата</th>
+              <th data-i18n="col_time">Время</th>
+              <th data-i18n="targets_col_word">Кодовое слово</th>
+              <th data-i18n="targets_col_digits44">Цифры (4+4)</th>
+              <th data-i18n="targets_col_header5">5-значный заголовок</th>
+              <th data-i18n="col_source">Источник</th>
             </tr>
           </thead>
           <tbody id="target-records-body"></tbody>
@@ -396,16 +431,16 @@
     <div id="tab-graph" class="tab-pane">
       <div class="section-header">
         <div>
-          <h2>Интерактивный граф связей радиообмена</h2>
-          <p>Многослойный сетевой граф: Кодовые слова &harr; Цифровые группы &harr; Позывные. Топологический анализ и поиск мостовых элементов.</p>
+          <h2 data-i18n="graph_title">Интерактивный граф связей радиообмена</h2>
+          <p data-i18n="graph_desc">Многослойный сетевой граф: Кодовые слова &harr; Цифровые группы &harr; Позывные. Топологический анализ и поиск мостовых элементов.</p>
         </div>
       </div>
 
       <div class="graph-toolbar">
-        <input type="text" id="graph-search-input" class="search-input" placeholder="Поиск слова или чисел (например, ЗИЗИФУС)..." style="width:300px;">
-        <button class="btn-action" onclick="searchGraphNode()">Найти</button>
-        <button class="btn-action" onclick="resetGraph()">Кластер ЗИЗИФУС</button>
-        <span style="font-size:0.8rem; color:var(--text-secondary);" id="selected-node-info">Кликните на узел для инспекции свойств</span>
+        <input type="text" id="graph-search-input" class="search-input" data-i18n-ph="graph_search_placeholder" placeholder="Поиск слова или чисел (например, ЗИЗИФУС)..." style="width:300px;">
+        <button class="btn-action" onclick="searchGraphNode()" data-i18n="btn_search">Найти</button>
+        <button class="btn-action" onclick="resetGraph()" data-i18n="btn_target_subgraph">Кластер ЗИЗИФУС</button>
+        <span style="font-size:0.8rem; color:var(--text-secondary);" id="selected-node-info" data-i18n="graph_inspect_hint">Кликните на узел для инспекции свойств</span>
       </div>
 
       <div id="network-container"></div>
@@ -419,21 +454,21 @@
     <div id="tab-models" class="tab-pane">
       <div class="section-header">
         <div>
-          <h2>Математические модели и классификация режимов</h2>
-          <p>Частотные распределения, кластеризация K-Means (4 режима боевой работы), суточные циклы и тест перестановок.</p>
+          <h2 data-i18n="models_title">Математические модели и классификация режимов</h2>
+          <p data-i18n="models_desc">Частотные распределения, кластеризация K-Means (4 режима боевой работы), суточные циклы и тест перестановок.</p>
         </div>
       </div>
 
       <div class="grid-cards" style="grid-template-columns: 1fr 1fr; margin-bottom:1.5rem;">
         <div class="card">
-          <div class="card-title">Коэффициент силуэта кластеризации (Silhouette Score)</div>
+          <div class="card-title" data-i18n="models_sil_title">Коэффициент силуэта кластеризации (Silhouette Score)</div>
           <div id="silhouette-score" class="card-value cyan">0.598</div>
-          <div class="card-desc">Высокая степень разделения операционных режимов (K=3 / K=4)</div>
+          <div class="card-desc" data-i18n="models_sil_desc">Высокая степень разделения операционных режимов (K=3 / K=4)</div>
         </div>
         <div class="card">
-          <div class="card-title">Тест перестановок Монте-Карло (Permutation Test)</div>
+          <div class="card-title" data-i18n="models_perm_card_title">Тест перестановок Монте-Карло (Permutation Test)</div>
           <div class="card-value emerald">p &lt; 0.0005</div>
-          <div class="card-desc">Статистическая значимость циклической структуры vs случайный шум</div>
+          <div class="card-desc" data-i18n="models_perm_card_desc">Статистическая значимость циклической структуры vs случайный шум</div>
         </div>
       </div>
 
@@ -443,26 +478,26 @@
       </div>
 
       <div class="intel-box cyan">
-        <h4>Тест перестановок Монте-Карло (Significance Engine)</h4>
-        <p>Проверка H0: Случайны ли всплески активности относительно военных учений и внешних событий?</p>
+        <h4 data-i18n="models_perm_box_title">Тест перестановок Монте-Карло (Significance Engine)</h4>
+        <p data-i18n="models_perm_box_desc">Проверка H0: Случайны ли всплески активности относительно военных учений и внешних событий?</p>
         <div style="margin-top:1rem;">
-          <button class="btn-action" onclick="runPermutationTest()">Запустить тест перестановок (2 000 итераций)</button>
+          <button class="btn-action" onclick="runPermutationTest()" data-i18n="btn_run_perm">Запустить тест перестановок (2 000 итераций)</button>
         </div>
         <div id="permutation-results" style="margin-top:1rem;"></div>
       </div>
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
         <div>
-          <h3 style="font-size:1rem; margin-bottom:0.75rem; color:var(--color-cyan);">Топ кодовых слов по частоте (Лексикон)</h3>
+          <h3 style="font-size:1rem; margin-bottom:0.75rem; color:var(--color-cyan);" data-i18n="models_tbl_words">Топ кодовых слов по частоте (Лексикон)</h3>
           <div class="table-container">
             <table>
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>Кодовое слово</th>
-                  <th>Частота</th>
-                  <th>Дней</th>
-                  <th>Период</th>
+                  <th data-i18n="models_col_rank">#</th>
+                  <th data-i18n="models_col_word">Кодовое слово</th>
+                  <th data-i18n="models_col_freq">Частота</th>
+                  <th data-i18n="models_col_days">Дней</th>
+                  <th data-i18n="models_col_span">Период</th>
                 </tr>
               </thead>
               <tbody id="word-freq-body"></tbody>
@@ -471,17 +506,17 @@
         </div>
 
         <div>
-          <h3 style="font-size:1rem; margin-bottom:0.75rem; color:var(--color-amber);">Повторные 8-значные комбинации (Кроссворды)</h3>
+          <h3 style="font-size:1rem; margin-bottom:0.75rem; color:var(--color-amber);" data-i18n="models_tbl_numbers">Повторные 8-значные комбинации (Кроссворды)</h3>
           <div class="table-container">
             <table>
               <thead>
                 <tr>
-                  <th>8-знак</th>
-                  <th>Слов</th>
-                  <th>Повторов</th>
-                  <th>Связанные слова</th>
-                  <th>Интервал</th>
-                  <th>Даты</th>
+                  <th data-i18n="models_col_8digit">8-знак</th>
+                  <th data-i18n="models_col_words_cnt">Слов</th>
+                  <th data-i18n="models_col_repeats">Повторов</th>
+                  <th data-i18n="models_col_linked_words">Связанные слова</th>
+                  <th data-i18n="models_col_interval">Интервал</th>
+                  <th data-i18n="models_col_dates">Даты</th>
                 </tr>
               </thead>
               <tbody id="repeated-numbers-body"></tbody>
@@ -491,15 +526,15 @@
       </div>
 
       <div style="margin-top:1.5rem;">
-        <h3 style="font-size:1rem; margin-bottom:0.75rem; color:var(--color-emerald);">Распределение позывных</h3>
+        <h3 style="font-size:1rem; margin-bottom:0.75rem; color:var(--color-emerald);" data-i18n="models_tbl_callsigns">Распределение позывных</h3>
         <div class="table-container">
           <table>
             <thead>
               <tr>
-                <th>Позывной</th>
-                <th>Радиограмм</th>
-                <th>Доля</th>
-                <th>Годы активности</th>
+                <th data-i18n="models_col_callsign">Позывной</th>
+                <th data-i18n="models_col_msgs">Радиограмм</th>
+                <th data-i18n="models_col_share">Доля</th>
+                <th data-i18n="models_col_years">Годы активности</th>
               </tr>
             </thead>
             <tbody id="callsign-freq-body"></tbody>
@@ -524,12 +559,12 @@
               <th data-i18n="col_date">Дата</th>
               <th data-i18n="col_event">Историческое событие</th>
               <th data-i18n="col_window">Окно (дней)</th>
-              <th>Факт До (передач)</th>
+              <th data-i18n="timeline_col_actual_before">Факт До (передач)</th>
               <th data-i18n="col_baseline">Базовое среднее</th>
               <th data-i18n="col_percentile">Процентиль</th>
-              <th>p-value (До)</th>
-              <th>Факт После (передач)</th>
-              <th>p-value (После)</th>
+              <th data-i18n="timeline_col_p_before">p-value (До)</th>
+              <th data-i18n="timeline_col_actual_after">Факт После (передач)</th>
+              <th data-i18n="timeline_col_p_after">p-value (После)</th>
             </tr>
           </thead>
           <tbody id="timeline-table-body"></tbody>
@@ -541,7 +576,7 @@
         <p data-i18n="custom_event_desc">Введите любую дату и название события для расчета эмпирического p-value и процентиля:</p>
         <div style="display:flex; gap:1rem; margin-top:1rem; align-items:center; flex-wrap:wrap;">
           <input type="date" id="custom-event-date" class="search-input" value="2014-03-01">
-          <input type="text" id="custom-event-name" class="search-input" placeholder="Название события" style="width:300px;" value="Ввод войск в Крым">
+          <input type="text" id="custom-event-name" class="search-input" data-i18n-ph="custom_event_ph" placeholder="Название события" style="width:300px;" value="Ввод войск в Крым">
           <button class="btn-action" onclick="evaluateCustomEvent()" data-i18n="btn_calc_event">Рассчитать</button>
         </div>
         <div id="custom-event-result" style="margin-top:1rem;"></div>
@@ -552,14 +587,14 @@
     <div id="tab-audit" class="tab-pane">
       <div class="section-header">
         <div>
-          <h2>Журнал аудита и очистки данных</h2>
-          <p>Протокол 10 категорий верификации: точные дубликаты, межфайловые копии (2020 в 2022), повторные эфирные передачи, ошибки транскрипции.</p>
+          <h2 data-i18n="audit_title">Журнал аудита и очистки данных</h2>
+          <p data-i18n="audit_desc">Протокол 10 категорий верификации: точные дубликаты, межфайловые копии (2020 в 2022), повторные эфирные передачи, ошибки транскрипции.</p>
         </div>
       </div>
 
       <div class="intel-box rose">
-        <h4>Прозрачность данных: Никаких автоматических удалений</h4>
-        <p>
+        <h4 data-i18n="audit_box_title">Прозрачность данных: Никаких автоматических удалений</h4>
+        <p data-i18n="audit_box_desc">
           Каждая аномалия, повторная передача или межфайловая ошибка документируется в журнале аудита с указанием конкретной строки файла и причины классификации.
         </p>
       </div>
@@ -568,12 +603,12 @@
         <table>
           <thead>
             <tr>
-              <th>Дата/Время</th>
-              <th>Категория аудита</th>
-              <th>Статус</th>
-              <th>Причина классификации</th>
-              <th>Текст / Сигнал</th>
-              <th>Файл и строка</th>
+              <th data-i18n="audit_col_datetime">Дата/Время</th>
+              <th data-i18n="audit_col_category">Категория аудита</th>
+              <th data-i18n="audit_col_status">Статус</th>
+              <th data-i18n="audit_col_reason">Причина классификации</th>
+              <th data-i18n="audit_col_text">Текст / Сигнал</th>
+              <th data-i18n="audit_col_source">Файл и строка</th>
             </tr>
           </thead>
           <tbody id="audit-table-body"></tbody>
@@ -585,14 +620,14 @@
     <div id="tab-messages" class="tab-pane">
       <div class="section-header">
         <div>
-          <h2>Архив радиограмм УВБ-76</h2>
-          <p>Полная база нормализованных радиограмм с фильтрацией по годам, позывным и кодовым словам.</p>
+          <h2 data-i18n="messages_title">Архив радиограмм УВБ-76</h2>
+          <p data-i18n="messages_desc">Полная база нормализованных радиограмм с фильтрацией по годам, позывным и кодовым словам.</p>
         </div>
       </div>
 
       <div class="graph-toolbar">
         <select id="msg-filter-year" class="select-input" onchange="loadMessagesTable(1)">
-          <option value="">Все годы</option>
+          <option value="" data-i18n="msg_all_years">Все годы</option>
           <option value="2011">2011</option>
           <option value="2014">2014</option>
           <option value="2015">2015</option>
@@ -602,8 +637,8 @@
           <option value="2020">2020</option>
           <option value="2022">2022</option>
         </select>
-        <input type="text" id="msg-filter-word" class="search-input" placeholder="Поиск слова или фрагмента..." onkeydown="if(event.key==='Enter') loadMessagesTable(1)">
-        <button class="btn-action" onclick="loadMessagesTable(1)">Применить</button>
+        <input type="text" id="msg-filter-word" class="search-input" data-i18n-ph="msg_filter_ph" placeholder="Поиск слова или фрагмента..." onkeydown="if(event.key==='Enter') loadMessagesTable(1)">
+        <button class="btn-action" onclick="loadMessagesTable(1)" data-i18n="msg_btn_apply">Применить</button>
         <span id="msg-total-count" style="color:var(--text-secondary); font-size:0.85rem; margin-left:auto;"></span>
       </div>
 
@@ -611,13 +646,13 @@
         <table>
           <thead>
             <tr>
-              <th>Дата</th>
-              <th>Время (UTC)</th>
-              <th>Позывной</th>
-              <th>5-знак</th>
-              <th>Радиограмма (Слова и Числа)</th>
-              <th>Качество</th>
-              <th>Источник</th>
+              <th data-i18n="msg_col_date">Дата</th>
+              <th data-i18n="msg_col_time">Время (UTC)</th>
+              <th data-i18n="msg_col_callsign">Позывной</th>
+              <th data-i18n="msg_col_prefix">5-знак</th>
+              <th data-i18n="msg_col_text">Радиограмма (Слова и Числа)</th>
+              <th data-i18n="msg_col_quality">Качество</th>
+              <th data-i18n="msg_col_source">Источник</th>
             </tr>
           </thead>
           <tbody id="messages-table-body"></tbody>
@@ -625,9 +660,9 @@
       </div>
 
       <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1rem;">
-        <button class="btn-action" onclick="prevMsgPage()">&larr; Предыдущая</button>
+        <button class="btn-action" onclick="prevMsgPage()" data-i18n="msg_btn_prev">&larr; Предыдущая</button>
         <span id="msg-page-indicator" style="font-family:var(--font-mono); font-size:0.85rem;">1 / 1</span>
-        <button class="btn-action" onclick="nextMsgPage()">Следующая &rarr;</button>
+        <button class="btn-action" onclick="nextMsgPage()" data-i18n="msg_btn_next">Следующая &rarr;</button>
       </div>
     </div>
 
@@ -635,58 +670,58 @@
     <div id="tab-exports" class="tab-pane">
       <div class="section-header">
         <div>
-          <h2>Экспорт аналитических данных</h2>
-          <p>Скачивание структурированных наборов данных CSV и полной базы SQLite для независимой верификации.</p>
+          <h2 data-i18n="exp_title">Экспорт аналитических данных</h2>
+          <p data-i18n="exp_desc">Скачивание структурированных наборов данных CSV и полной базы SQLite для независимой верификации.</p>
         </div>
       </div>
 
       <div class="grid-cards" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
         <div class="card">
           <div class="card-title">UVB76_full_messages.csv</div>
-          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
-            Полный массив всех распознанных радиограмм до дедупликации (1 304 записи).
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;" data-i18n="exp_c1_desc">
+            Полный массив всех распознанных радиограмм до дедупликации (1 304 записи). Содержит перекрывающиеся логи радионаблюдателей и дубликаты.
           </p>
-          <a href="/api/export/download/UVB76_full_messages.csv" class="btn-action" style="display:inline-block; text-decoration:none;">Скачать CSV</a>
+          <a href="/api/export/download/UVB76_full_messages.csv" class="btn-action" style="display:inline-block; text-decoration:none;" data-i18n="exp_btn_csv">Скачать CSV</a>
         </div>
 
         <div class="card">
           <div class="card-title">UVB76_full_messages_deduplicated.csv</div>
-          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
-            Очищенная база уникальных первичных радиопередач (1 253 записи).
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;" data-i18n="exp_c2_desc">
+            Очищенная база уникальных первичных радиопередач (1 253 записи). Аналитический массив, используемый во всех математических моделях лаборатории.
           </p>
-          <a href="/api/export/download/UVB76_full_messages_deduplicated.csv" class="btn-action" style="display:inline-block; text-decoration:none;">Скачать CSV</a>
+          <a href="/api/export/download/UVB76_full_messages_deduplicated.csv" class="btn-action" style="display:inline-block; text-decoration:none;" data-i18n="exp_btn_csv">Скачать CSV</a>
         </div>
 
         <div class="card">
           <div class="card-title">UVB76_duplicates_audit.csv</div>
-          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
-            Полный журнал аудита с объяснением причин каждого исключения и флага.
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;" data-i18n="exp_c3_desc">
+            Полный журнал аудита с объяснением причин каждого исключения, межфайловых наложений и флагов классификации.
           </p>
-          <a href="/api/export/download/UVB76_duplicates_audit.csv" class="btn-action" style="display:inline-block; text-decoration:none;">Скачать CSV</a>
+          <a href="/api/export/download/UVB76_duplicates_audit.csv" class="btn-action" style="display:inline-block; text-decoration:none;" data-i18n="exp_btn_csv">Скачать CSV</a>
         </div>
 
         <div class="card">
           <div class="card-title">UVB76_repeated_numbers.csv</div>
-          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
-            Таблица всех повторяющихся цифровых комбинаций и их интервалов.
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;" data-i18n="exp_c4_desc">
+            Таблица всех повторяющихся цифровых комбинаций, частот повторений и межпосылочных интервалов.
           </p>
-          <a href="/api/export/download/UVB76_repeated_numbers.csv" class="btn-action" style="display:inline-block; text-decoration:none;">Скачать CSV</a>
+          <a href="/api/export/download/UVB76_repeated_numbers.csv" class="btn-action" style="display:inline-block; text-decoration:none;" data-i18n="exp_btn_csv">Скачать CSV</a>
         </div>
 
         <div class="card">
           <div class="card-title">UVB76_crossword_number_links.csv</div>
-          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
-            Кроссвордные связи: одинаковые 8-значные комбинации у разных кодовых слов.
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;" data-i18n="exp_c5_desc">
+            Кроссвордные связи: одинаковые 8-значные комбинации у разных фонетических кодовых слов.
           </p>
-          <a href="/api/export/download/UVB76_crossword_number_links.csv" class="btn-action" style="display:inline-block; text-decoration:none;">Скачать CSV</a>
+          <a href="/api/export/download/UVB76_crossword_number_links.csv" class="btn-action" style="display:inline-block; text-decoration:none;" data-i18n="exp_btn_csv">Скачать CSV</a>
         </div>
 
         <div class="card">
-          <div class="card-title">База данных SQLite (ziziphus_jujuba.db)</div>
-          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
-            Реляционная база данных (Messages, CodeBlocks, Sources, HistoricalEvents, AuditLog).
+          <div class="card-title" data-i18n="exp_c6_title">База данных SQLite (ziziphus_jujuba.db)</div>
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;" data-i18n="exp_c6_desc">
+            Полная реляционная база данных проекта (таблицы Messages, CodeBlocks, Sources, HistoricalEvents, AuditLog).
           </p>
-          <a href="/api/export/download/ziziphus_jujuba.db" class="btn-action" style="display:inline-block; text-decoration:none;">Скачать SQLite DB</a>
+          <a href="/api/export/download/ziziphus_jujuba.db" class="btn-action" style="display:inline-block; text-decoration:none;" data-i18n="exp_btn_sqlite">Скачать SQLite DB</a>
         </div>
       </div>
     </div>
@@ -706,22 +741,22 @@
         <div class="card">
           <div class="card-title" data-i18n="tb_total_clean">Чистых радиограмм</div>
           <div id="tb-total-msgs" class="card-value cyan">—</div>
-          <div class="card-desc">Все доступные годы (2011–2022)</div>
+          <div class="card-desc" data-i18n="tb_desc_1">Все доступные годы (2011–2022)</div>
         </div>
         <div class="card">
           <div class="card-title" data-i18n="tb_mean_interval">Средний интервал (&Delta;t)</div>
           <div id="tb-mean-interval" class="card-value emerald">—</div>
-          <div class="card-desc">Между смежными передачами</div>
+          <div class="card-desc" data-i18n="tb_desc_2">Между смежными передачами</div>
         </div>
         <div class="card">
           <div class="card-title" data-i18n="tb_fano">Фактор Фано (Fano Factor)</div>
           <div id="tb-fano" class="card-value amber">—</div>
-          <div class="card-desc">Var / Mean &gt;&gt; 1 (Всплесковость)</div>
+          <div class="card-desc" data-i18n="tb_desc_3">Var / Mean &gt;&gt; 1 (Всплесковость)</div>
         </div>
         <div class="card">
           <div class="card-title" data-i18n="tb_daytime_pct">Дневная доля (07-18 UTC)</div>
           <div id="tb-daytime-pct" class="card-value purple">—</div>
-          <div class="card-desc">10:00–21:00 по Москве (MSK)</div>
+          <div class="card-desc" data-i18n="tb_desc_4">10:00–21:00 по Москве (MSK)</div>
         </div>
       </div>
 
@@ -771,22 +806,22 @@
         <div class="card">
           <div class="card-title" data-i18n="sc_vocab_total">Уникальный лексикон</div>
           <div id="sc-total-vocab" class="card-value cyan">—</div>
-          <div class="card-desc">Всего зафиксированных слов</div>
+          <div class="card-desc" data-i18n="sc_desc_1">Всего зафиксированных слов</div>
         </div>
         <div class="card">
           <div class="card-title" data-i18n="sc_singletons">Одиночных слов (Hapax)</div>
           <div id="sc-singletons" class="card-value amber">—</div>
-          <div class="card-desc">Встретились ровно 1 раз</div>
+          <div class="card-desc" data-i18n="sc_desc_2">Встретились ровно 1 раз</div>
         </div>
         <div class="card">
           <div class="card-title" data-i18n="sc_single_block">Одноблочных радиограмм</div>
           <div id="sc-single-block" class="card-value emerald">—</div>
-          <div class="card-desc">Стандартный формат (1 слово + 8 цифр)</div>
+          <div class="card-desc" data-i18n="sc_desc_3">Стандартный формат (1 слово + 8 цифр)</div>
         </div>
         <div class="card">
           <div class="card-title" data-i18n="sc_heaps_beta">Показатель Хипса (&beta;)</div>
           <div id="sc-heaps-beta" class="card-value purple">—</div>
-          <div class="card-desc">V(N) = k &middot; N^&beta; (&beta; &lt; 1: закрытый словарь)</div>
+          <div class="card-desc" data-i18n="sc_desc_4">V(N) = k &middot; N^&beta; (&beta; &lt; 1: закрытый словарь)</div>
         </div>
       </div>
 
@@ -827,7 +862,7 @@
               </tr>
             </thead>
             <tbody id="table-cooccur-body">
-              <tr><td colspan="3" style="text-align:center;">Загрузка данных...</td></tr>
+              <tr><td colspan="3" style="text-align:center;" data-i18n="tbl_loading_data">Загрузка данных...</td></tr>
             </tbody>
           </table>
         </div>
@@ -845,11 +880,11 @@
           <p data-i18n="anom_desc">Выявление аномальных всплесков активности через медианное абсолютное отклонение (MAD), пуассоновские вероятности и форензик-аудит февраля 2022 года.</p>
         </div>
         <div style="display:flex; align-items:center; gap:0.75rem;">
-          <span style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-secondary);">Порог MAD Z:</span>
+          <span style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-secondary);" data-i18n="anom_threshold_label">Порог MAD Z:</span>
           <select id="anom-threshold-select" class="radio-select" style="max-width:140px;">
             <option value="2.5">2.5 MAD</option>
-            <option value="3.0" selected>3.0 MAD (Стандарт)</option>
-            <option value="4.0">4.0 MAD (Критический)</option>
+            <option value="3.0" selected data-i18n="anom_opt_std">3.0 MAD (Стандарт)</option>
+            <option value="4.0" data-i18n="anom_opt_crit">4.0 MAD (Критический)</option>
           </select>
         </div>
       </div>
@@ -868,7 +903,7 @@
               </tr>
             </thead>
             <tbody id="table-anomalies-body">
-              <tr><td colspan="5" style="text-align:center;">Вычисление аномалий...</td></tr>
+              <tr><td colspan="5" style="text-align:center;" data-i18n="tbl_calc_anomalies">Вычисление аномалий...</td></tr>
             </tbody>
           </table>
         </div>
@@ -904,10 +939,10 @@
           <p data-i18n="net_desc">Топологические срезы графа кодовых слов и цифровых групп по четырём хронологическим эпохам УВБ-76.</p>
         </div>
         <div class="callsign-pills" id="epoch-pill-buttons" style="margin-bottom:0;">
-          <button type="button" class="callsign-pill" data-epoch="epoch_1">2011–2013: Начальная эра</button>
-          <button type="button" class="callsign-pill active" data-epoch="epoch_2">2014–2015: Пик кодовых сеток</button>
-          <button type="button" class="callsign-pill" data-epoch="epoch_3">2016–2019: Ротация позывных</button>
-          <button type="button" class="callsign-pill" data-epoch="epoch_4">2020–2022: Современный этап</button>
+          <button type="button" class="callsign-pill" data-epoch="epoch_1" data-i18n="epoch_btn_1">2011–2013: Начальная эра</button>
+          <button type="button" class="callsign-pill active" data-epoch="epoch_2" data-i18n="epoch_btn_2">2014–2015: Пик кодовых сеток</button>
+          <button type="button" class="callsign-pill" data-epoch="epoch_3" data-i18n="epoch_btn_3">2016–2019: Ротация позывных</button>
+          <button type="button" class="callsign-pill" data-epoch="epoch_4" data-i18n="epoch_btn_4">2020–2022: Современный этап</button>
         </div>
       </div>
 
@@ -915,27 +950,27 @@
         <div class="card">
           <div class="card-title" data-i18n="net_nodes">Узлов в эпохе |V|</div>
           <div id="epoch-stat-nodes" class="card-value cyan">—</div>
-          <div class="card-desc">Слова и цифровые группы</div>
+          <div class="card-desc" data-i18n="net_desc_1">Слова и цифровые группы</div>
         </div>
         <div class="card">
           <div class="card-title" data-i18n="net_edges">Связей |E|</div>
           <div id="epoch-stat-edges" class="card-value emerald">—</div>
-          <div class="card-desc">Парные и циркулярные ребра</div>
+          <div class="card-desc" data-i18n="net_desc_2">Парные и циркулярные ребра</div>
         </div>
         <div class="card">
           <div class="card-title" data-i18n="net_density">Плотность (Density)</div>
           <div id="epoch-stat-density" class="card-value amber">—</div>
-          <div class="card-desc">Связность топологии</div>
+          <div class="card-desc" data-i18n="net_desc_3">Связность топологии</div>
         </div>
         <div class="card">
           <div class="card-title" data-i18n="net_transitivity">Кластеризация (Transitivity)</div>
           <div id="epoch-stat-transitivity" class="card-value purple">—</div>
-          <div class="card-desc">Коэффициент транзитивности</div>
+          <div class="card-desc" data-i18n="net_desc_4">Коэффициент транзитивности</div>
         </div>
         <div class="card">
           <div class="card-title" data-i18n="net_giant">Гигантская компонента</div>
           <div id="epoch-stat-giant" class="card-value cyan">—</div>
-          <div class="card-desc">Доля узлов в главном кластере</div>
+          <div class="card-desc" data-i18n="net_desc_5">Доля узлов в главном кластере</div>
         </div>
       </div>
 
@@ -956,7 +991,7 @@
               </tr>
             </thead>
             <tbody id="table-epoch-hubs-body">
-              <tr><td colspan="3" style="text-align:center;">Загрузка хабов...</td></tr>
+              <tr><td colspan="3" style="text-align:center;" data-i18n="tbl_loading_hubs">Загрузка хабов...</td></tr>
             </tbody>
           </table>
         </div>
@@ -1008,7 +1043,7 @@
   <!-- Footer -->
   <footer>
     <div>ZIZIPHUS JUJUBA &bull; Signal Intelligence & Pattern Analysis Lab &bull; UVB-76 Open Research</div>
-    <div>Local analytical instance &bull; Windows 64-bit</div>
+    <div data-i18n="footer_sub">Local analytical instance &bull; Windows 64-bit</div>
   </footer>
 
   <script src="/static/js/lab_app.js"></script>
