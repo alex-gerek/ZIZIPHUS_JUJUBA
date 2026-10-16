@@ -29,7 +29,11 @@
         <div class="pulse-dot" style="background-color:var(--color-cyan);"></div>
         <span data-i18n="station_live">4625 кГц | УВБ-76 | АРХИВНЫЙ РЕЖИМ (2010–2022)</span>
       </div>
-      <button id="lang-btn" class="lang-btn" data-i18n="lang_toggle">EN / RU</button>
+      <div class="lang-switch-container" id="lang-switch-group" role="group" aria-label="Language selector">
+        <span class="lang-icon" title="Language / Язык">🌐</span>
+        <button type="button" class="lang-btn-pill active" data-lang="ru" title="Русский">RU</button>
+        <button type="button" class="lang-btn-pill" data-lang="en" title="English">EN</button>
+      </div>
     </div>
   </header>
 

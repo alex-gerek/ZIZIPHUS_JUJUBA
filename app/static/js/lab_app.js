@@ -432,17 +432,49 @@ function updateTranslations() {
   });
 }
 
-function setupLanguageToggle() {
-  const btn = document.getElementById("lang-btn");
-  btn.addEventListener("click", () => {
-    currentLang = currentLang === 'ru' ? 'en' : 'ru';
-    btn.textContent = I18N[currentLang].lang_toggle;
-    updateTranslations();
-    const activePane = document.querySelector(".tab-pane.active");
-    if (activePane && activePane.id === "tab-overview") {
-      loadOverview();
+function setLanguage(lang) {
+  if (lang !== 'ru' && lang !== 'en') return;
+  currentLang = lang;
+  
+  document.querySelectorAll(".lang-btn-pill").forEach(pill => {
+    if (pill.getAttribute("data-lang") === currentLang) {
+      pill.classList.add("active");
+    } else {
+      pill.classList.remove("active");
     }
   });
+
+  const oldBtn = document.getElementById("lang-btn");
+  if (oldBtn) {
+    oldBtn.textContent = I18N[currentLang].lang_toggle;
+  }
+
+  updateTranslations();
+  
+  const activePane = document.querySelector(".tab-pane.active");
+  if (activePane) {
+    if (activePane.id === "tab-overview") loadOverview();
+    else if (activePane.id === "tab-traffic") loadTrafficBehavior();
+    else if (activePane.id === "tab-structural") loadStructuralChanges();
+    else if (activePane.id === "tab-anomalies") loadAnomalyExplorer();
+    else if (activePane.id === "tab-findings") loadResearchFindings();
+  }
+}
+
+function setupLanguageToggle() {
+  document.querySelectorAll(".lang-btn-pill").forEach(pill => {
+    pill.addEventListener("click", () => {
+      const selectedLang = pill.getAttribute("data-lang");
+      setLanguage(selectedLang);
+    });
+  });
+
+  const oldBtn = document.getElementById("lang-btn");
+  if (oldBtn) {
+    oldBtn.addEventListener("click", () => {
+      setLanguage(currentLang === 'ru' ? 'en' : 'ru');
+    });
+  }
 }
 
 function setupTabs() {
