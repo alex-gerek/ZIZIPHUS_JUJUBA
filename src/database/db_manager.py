@@ -5,9 +5,24 @@ Manages normalized SQLite schema for UVB-76 archives and historical events with 
 
 import sqlite3
 import pathlib
+import sys
 from typing import Optional, List, Dict, Any
 
-DEFAULT_DB_PATH = pathlib.Path("D:/Projects/ZIZIPHUS_JUJUBA/data/database/ziziphus_jujuba.db")
+def _resolve_default_db_path() -> pathlib.Path:
+    if getattr(sys, 'frozen', False):
+        exe_dir = pathlib.Path(sys.executable).parent.resolve()
+        if (exe_dir / "data/database/ziziphus_jujuba.db").exists():
+            return exe_dir / "data/database/ziziphus_jujuba.db"
+        if (exe_dir / "_internal/data/database/ziziphus_jujuba.db").exists():
+            return exe_dir / "_internal/data/database/ziziphus_jujuba.db"
+        if hasattr(sys, '_MEIPASS'):
+            meipass = pathlib.Path(sys._MEIPASS).resolve()
+            if (meipass / "data/database/ziziphus_jujuba.db").exists():
+                return meipass / "data/database/ziziphus_jujuba.db"
+        return exe_dir / "data/database/ziziphus_jujuba.db"
+    return pathlib.Path(__file__).resolve().parent.parent.parent / "data/database/ziziphus_jujuba.db"
+
+DEFAULT_DB_PATH = _resolve_default_db_path()
 
 SCHEMA_SQL = """
 PRAGMA foreign_keys = ON;

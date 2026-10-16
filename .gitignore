@@ -44,6 +44,7 @@ env/
 # Backups
 backups/
 BACKUPS/
+backup_pre_distribution/
 *.zip
 
 # IDE & Editor settings

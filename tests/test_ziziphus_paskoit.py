@@ -7,7 +7,7 @@ import unittest
 import sqlite3
 import pathlib
 
-DB_PATH = pathlib.Path("D:/Projects/ZIZIPHUS_JUJUBA/data/database/ziziphus_jujuba.db")
+DB_PATH = pathlib.Path(__file__).resolve().parent.parent / "data/database/ziziphus_jujuba.db"
 
 class TestZiziphusPaskoit(unittest.TestCase):
     @classmethod

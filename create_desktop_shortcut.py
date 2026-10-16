@@ -10,7 +10,7 @@ import pathlib
 import subprocess
 
 desktop = pathlib.Path(os.path.expanduser('~')) / 'Desktop'
-working_dir = pathlib.Path('D:/Projects/ZIZIPHUS_JUJUBA').resolve()
+working_dir = pathlib.Path(__file__).resolve().parent
 shortcut_path = desktop / 'ZIZIPHUS JUJUBA.lnk'
 
 ps_code = f"""

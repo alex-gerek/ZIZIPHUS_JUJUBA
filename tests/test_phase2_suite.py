@@ -16,7 +16,7 @@ from src.models.network_evolution import NetworkEvolutionEngine
 from src.models.event_study_advanced import AdvancedEventStudyEngine
 from src.analysis.findings_registry import FindingsRegistryEngine
 
-DB_PATH = pathlib.Path("D:/Projects/ZIZIPHUS_JUJUBA/data/database/ziziphus_jujuba.db")
+DB_PATH = pathlib.Path(__file__).resolve().parent.parent / "data/database/ziziphus_jujuba.db"
 
 
 class TestPhase2Suite(unittest.TestCase):

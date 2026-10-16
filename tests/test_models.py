@@ -14,7 +14,7 @@ from src.models.graph_intelligence import GraphIntelligenceEngine
 from src.models.event_study import HistoricalEventStudy
 from src.models.hypothesis_tests import HypothesisTestingEngine
 
-DB_PATH = pathlib.Path("D:/Projects/ZIZIPHUS_JUJUBA/data/database/ziziphus_jujuba.db")
+DB_PATH = pathlib.Path(__file__).resolve().parent.parent / "data/database/ziziphus_jujuba.db"
 
 class TestAnalyticsModels(unittest.TestCase):
     @classmethod

@@ -30,7 +30,23 @@ from src.models.network_evolution import NetworkEvolutionEngine
 from src.models.event_study_advanced import AdvancedEventStudyEngine
 from src.analysis.findings_registry import FindingsRegistryEngine
 
-BASE_DIR = pathlib.Path("D:/Projects/ZIZIPHUS_JUJUBA")
+import sys
+
+def get_base_dir() -> pathlib.Path:
+    if getattr(sys, 'frozen', False):
+        exe_dir = pathlib.Path(sys.executable).parent.resolve()
+        if (exe_dir / "data/database/ziziphus_jujuba.db").exists():
+            return exe_dir
+        if (exe_dir / "_internal/data/database/ziziphus_jujuba.db").exists():
+            return exe_dir / "_internal"
+        if hasattr(sys, '_MEIPASS'):
+            meipass = pathlib.Path(sys._MEIPASS).resolve()
+            if (meipass / "data/database/ziziphus_jujuba.db").exists():
+                return meipass
+        return exe_dir
+    return pathlib.Path(__file__).resolve().parent.parent
+
+BASE_DIR = get_base_dir()
 DB_PATH = BASE_DIR / "data/database/ziziphus_jujuba.db"
 EXPORTS_DIR = BASE_DIR / "exports"
 

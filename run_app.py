@@ -10,7 +10,21 @@ import threading
 import time
 import webbrowser
 
-BASE_DIR = pathlib.Path(__file__).parent.resolve()
+def get_base_dir() -> pathlib.Path:
+    if getattr(sys, 'frozen', False):
+        exe_dir = pathlib.Path(sys.executable).parent.resolve()
+        if (exe_dir / "data/database/ziziphus_jujuba.db").exists():
+            return exe_dir
+        if (exe_dir / "_internal/data/database/ziziphus_jujuba.db").exists():
+            return exe_dir / "_internal"
+        if hasattr(sys, '_MEIPASS'):
+            meipass = pathlib.Path(sys._MEIPASS).resolve()
+            if (meipass / "data/database/ziziphus_jujuba.db").exists():
+                return meipass
+        return exe_dir
+    return pathlib.Path(__file__).parent.resolve()
+
+BASE_DIR = get_base_dir()
 DB_FILE = BASE_DIR / "data/database/ziziphus_jujuba.db"
 
 def open_browser():
@@ -41,7 +55,8 @@ def main():
     print("[SERVER] Press Ctrl+C in this window to stop the server.\n")
     
     import uvicorn
-    uvicorn.run("app.main:app", host="127.0.0.1", port=8765, log_level="info")
+    from app.main import app
+    uvicorn.run(app, host="127.0.0.1", port=8765, log_level="info")
 
 if __name__ == "__main__":
     main()

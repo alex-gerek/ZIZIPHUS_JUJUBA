@@ -15,7 +15,7 @@ from src.database.db_manager import DatabaseManager
 from src.parsing.log_parser import UVBLogParser
 from src.cleaning.audit_deduplication import DataAuditor
 
-BASE_DIR = pathlib.Path("D:/Projects/ZIZIPHUS_JUJUBA")
+BASE_DIR = pathlib.Path(__file__).resolve().parent.parent.parent
 RAW_LOGS_DIR = BASE_DIR / "data/raw/github_repo/UVB-76-Structured-Signal-Analysis-main/data/raw"
 CLEANED_DIR = BASE_DIR / "data/cleaned"
 EXPORTS_DIR = BASE_DIR / "exports"
