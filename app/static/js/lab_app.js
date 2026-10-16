@@ -1508,12 +1508,46 @@ async function loadAuditLogs() {
     const data = await res.json();
     const tbody = document.getElementById("audit-table-body");
     tbody.innerHTML = "";
+    const auditTypeMap = {
+      ru: {
+        'CROSS_FILE_DUPLICATE': 'МЕЖФАЙЛОВЫЙ ДУБЛИКАТ',
+        'EXACT_ARCHIVE_DUPLICATE': 'ТОЧНЫЙ ДУБЛИКАТ',
+        'REPEATED_TRANSMISSION': 'ПОВТОРНАЯ ПЕРЕДАЧА',
+        'NON_VOICE_ANOMALY': 'НЕГОЛОСОВАЯ АНОМАЛИЯ',
+        'MISSING_FIELDS': 'ПРОПУЩЕНЫ ПОЛЯ',
+        'OPERATOR_CORRECTION': 'ОШИБКА ОПЕРАТОРА'
+      },
+      en: {
+        'CROSS_FILE_DUPLICATE': 'CROSS-FILE DUP',
+        'EXACT_ARCHIVE_DUPLICATE': 'EXACT DUPLICATE',
+        'REPEATED_TRANSMISSION': 'RETRANSMISSION',
+        'NON_VOICE_ANOMALY': 'NON-VOICE ANOMALY',
+        'MISSING_FIELDS': 'MISSING FIELDS',
+        'OPERATOR_CORRECTION': 'OPERATOR CORRECTION'
+      }
+    };
+    const actionMap = {
+      ru: {
+        'FLAGGED_AS_DUPLICATE': 'ПОМЕЧЕН КАК ДУБЛИКАТ',
+        'FLAGGED_EXCLUDED_FROM_VOICE_STUDY': 'ИСКЛЮЧЕН ИЗ АНАЛИЗА РЕЧИ',
+        'LOGGED_WARNING': 'ЗАФИКСИРОВАНО',
+        'LOGGED_QUALITY_FLAG': 'ФЛАГ КАЧЕСТВА'
+      },
+      en: {
+        'FLAGGED_AS_DUPLICATE': 'FLAGGED AS DUPLICATE',
+        'FLAGGED_EXCLUDED_FROM_VOICE_STUDY': 'EXCLUDED FROM VOICE STUDY',
+        'LOGGED_WARNING': 'LOGGED WARNING',
+        'LOGGED_QUALITY_FLAG': 'QUALITY FLAG'
+      }
+    };
     data.forEach(a => {
+      const typeText = (auditTypeMap[currentLang] && auditTypeMap[currentLang][a.audit_type]) || a.audit_type;
+      const actText = (actionMap[currentLang] && actionMap[currentLang][a.action_taken]) || a.action_taken;
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td class="mono-cell">${a.date || '—'} ${a.time || ''}</td>
-        <td class="mono-cell"><span class="badge badge-amber">${a.audit_type}</span></td>
-        <td class="mono-cell"><span class="badge badge-rose">${a.action_taken}</span></td>
+        <td class="mono-cell"><span class="badge badge-amber">${typeText}</span></td>
+        <td class="mono-cell"><span class="badge badge-rose">${actText}</span></td>
         <td>${a.rationale}</td>
         <td class="mono-cell"><small>${a.raw_snippet}</small></td>
         <td class="mono-cell"><small>${a.source_file}:${a.source_line}</small></td>
@@ -1545,7 +1579,26 @@ async function loadMessagesTable(page = 1) {
     
     const tbody = document.getElementById("messages-table-body");
     tbody.innerHTML = "";
+    const qualityMap = {
+      ru: {
+        'NORMAL': 'НОРМА',
+        'UNCERTAIN_TRANSCRIPTION': 'НЕУВЕРЕННО',
+        'INCOMPLETE_OR_UNPARSED': 'НЕПОЛНАЯ',
+        'NON_VOICE_ANOMALY': 'АНОМАЛИЯ',
+        'RETRANSMISSION_MULTI_TIME': 'ПОВТОР'
+      },
+      en: {
+        'NORMAL': 'NORMAL',
+        'UNCERTAIN_TRANSCRIPTION': 'UNCERTAIN',
+        'INCOMPLETE_OR_UNPARSED': 'INCOMPLETE',
+        'NON_VOICE_ANOMALY': 'ANOMALY',
+        'RETRANSMISSION_MULTI_TIME': 'RETRANSMISSION'
+      }
+    };
     data.items.forEach(m => {
+      const qText = (qualityMap[currentLang] && qualityMap[currentLang][m.quality_flag]) || m.quality_flag;
+      const qColor = m.quality_flag === 'NORMAL' ? 'badge-emerald' 
+                   : (m.quality_flag === 'UNCERTAIN_TRANSCRIPTION' ? 'badge-amber' : 'badge-cyan');
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td class="mono-cell"><strong>${m.date}</strong></td>
@@ -1553,7 +1606,7 @@ async function loadMessagesTable(page = 1) {
         <td class="mono-cell"><span class="badge badge-cyan">${m.callsign || '—'}</span></td>
         <td class="mono-cell">${m.header_number || '—'}</td>
         <td class="mono-cell"><strong>${m.full_word_sequence}</strong></td>
-        <td class="mono-cell"><span class="badge badge-emerald">${m.quality_flag}</span></td>
+        <td class="mono-cell"><span class="badge ${qColor}">${qText}</span></td>
         <td class="mono-cell"><small>${m.source_file}:${m.source_line}</small></td>
       `;
       tbody.appendChild(tr);
