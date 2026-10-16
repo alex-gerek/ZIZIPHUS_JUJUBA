@@ -1,0 +1,111 @@
+{
+  "messages": 1139,
+  "parsed_blocks": 1269,
+  "cross_word_number_groups": 84,
+  "year_counts": {
+    "2011": 131,
+    "2014": 198,
+    "2015": 272,
+    "2017": 152,
+    "2018": 26,
+    "2019": 228,
+    "2020": 92,
+    "2022": 40
+  },
+  "event_study": [
+    {
+      "event": "Kyiv government change",
+      "date": "2014-02-22",
+      "window_days": 7,
+      "observed": 1,
+      "baseline_mean": 3.8,
+      "baseline_median": 2.0,
+      "percentile": 34.1,
+      "p_upper": 0.838,
+      "reference_dates": 358
+    },
+    {
+      "event": "Kyiv government change",
+      "date": "2014-02-22",
+      "window_days": 30,
+      "observed": 4,
+      "baseline_mean": 16.49,
+      "baseline_median": 13,
+      "percentile": 3.9,
+      "p_upper": 0.9701,
+      "reference_dates": 335
+    },
+    {
+      "event": "Crimean administrative buildings seized",
+      "date": "2014-02-27",
+      "window_days": 7,
+      "observed": 2,
+      "baseline_mean": 3.8,
+      "baseline_median": 2.0,
+      "percentile": 50.3,
+      "p_upper": 0.6592,
+      "reference_dates": 358
+    },
+    {
+      "event": "Crimean administrative buildings seized",
+      "date": "2014-02-27",
+      "window_days": 30,
+      "observed": 6,
+      "baseline_mean": 16.49,
+      "baseline_median": 13,
+      "percentile": 9.3,
+      "p_upper": 0.9493,
+      "reference_dates": 335
+    },
+    {
+      "event": "Crimea referendum",
+      "date": "2014-03-16",
+      "window_days": 7,
+      "observed": 2,
+      "baseline_mean": 3.8,
+      "baseline_median": 2.0,
+      "percentile": 50.3,
+      "p_upper": 0.6592,
+      "reference_dates": 358
+    },
+    {
+      "event": "Crimea referendum",
+      "date": "2014-03-16",
+      "window_days": 30,
+      "observed": 10,
+      "baseline_mean": 16.49,
+      "baseline_median": 13,
+      "percentile": 39.1,
+      "p_upper": 0.6716,
+      "reference_dates": 335
+    },
+    {
+      "event": "Annexation treaty signed",
+      "date": "2014-03-18",
+      "window_days": 7,
+      "observed": 1,
+      "baseline_mean": 3.8,
+      "baseline_median": 2.0,
+      "percentile": 34.1,
+      "p_upper": 0.838,
+      "reference_dates": 358
+    },
+    {
+      "event": "Annexation treaty signed",
+      "date": "2014-03-18",
+      "window_days": 30,
+      "observed": 10,
+      "baseline_mean": 16.49,
+      "baseline_median": 13,
+      "percentile": 39.1,
+      "p_upper": 0.6716,
+      "reference_dates": 335
+    }
+  ],
+  "warnings": [
+    "Selected, incomplete, nonrandom archive; no inference about full station activity.",
+    "Historical events are illustrative and partly clustered, so event tests are not independent.",
+    "Same-year reference dates are a descriptive baseline, not a validated causal or predictive significance test.",
+    "Source transcription, UTC/local timestamps, and 2014 historical-event timestamps need independent verification."
+  ]
+}

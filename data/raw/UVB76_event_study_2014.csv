@@ -1,0 +1,9 @@
+﻿event,date,window_days,observed,baseline_mean,baseline_median,percentile,p_upper,reference_dates
+Kyiv government change,2014-02-22,7,1,3.8,2.0,34.1,0.838,358
+Kyiv government change,2014-02-22,30,4,16.49,13,3.9,0.9701,335
+Crimean administrative buildings seized,2014-02-27,7,2,3.8,2.0,50.3,0.6592,358
+Crimean administrative buildings seized,2014-02-27,30,6,16.49,13,9.3,0.9493,335
+Crimea referendum,2014-03-16,7,2,3.8,2.0,50.3,0.6592,358
+Crimea referendum,2014-03-16,30,10,16.49,13,39.1,0.6716,335
+Annexation treaty signed,2014-03-18,7,1,3.8,2.0,34.1,0.838,358
+Annexation treaty signed,2014-03-18,30,10,16.49,13,39.1,0.6716,335

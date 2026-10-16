@@ -1,0 +1,22 @@
+{
+  "UVB-76-Structured-Signal-Analysis-main.zip": {
+    "sha256": "29436d9b72feb0ebf6d6660afe023c0ce33e31581a97e2953661f7f5c7124fe5",
+    "size_bytes": 635416
+  },
+  "uvb76_event_model.py": {
+    "sha256": "b17c9b019c592e29444dcf0bf1f1d25a7b383e7f69ccd0693eef3483edc8da11",
+    "size_bytes": 3740
+  },
+  "UVB76_crossword_number_links.csv": {
+    "sha256": "89a4a669c29fc3d8f2a804a23b2dd5555564f78106090c84d63658b1c353c5bf",
+    "size_bytes": 6540
+  },
+  "UVB76_event_study_2014.csv": {
+    "sha256": "e9323c6502a65a0dc3025a893ec418535066b5d46882e92872684ebb2b56d29a",
+    "size_bytes": 639
+  },
+  "UVB76_model_summary.json": {
+    "sha256": "e2f4661795656b49e490f61ea245f424712eb482beae603b38599ed700968921",
+    "size_bytes": 2860
+  }
+}

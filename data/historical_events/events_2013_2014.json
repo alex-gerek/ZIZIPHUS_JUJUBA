@@ -1,0 +1,178 @@
+[
+  {
+    "event_name": "Начало Евромайдана в Киеве",
+    "event_name_en": "Euromaidan protests begin in Kyiv",
+    "start_date": "2013-11-21",
+    "end_date": "2013-11-22",
+    "category": "Political / Unrest",
+    "region": "Kyiv, Ukraine",
+    "description": "Массовые акции протеста на Майдане Незалежности после приостановки подготовки к подписанию Соглашения об ассоциации с ЕС.",
+    "source_url": "https://www.bbc.com/news/world-europe-25162563",
+    "dating_accuracy": "exact_day"
+  },
+  {
+    "event_name": "Принятие 'диктаторских законов' 16 января",
+    "event_name_en": "Anti-protest laws passed by Ukrainian Parliament",
+    "start_date": "2014-01-16",
+    "end_date": "2014-01-16",
+    "category": "Legislative / Crisis",
+    "region": "Kyiv, Ukraine",
+    "description": "Принятие пакета законов, ограничивающих свободу собраний, что привело к эскалации силового противостояния на ул. Грушевского.",
+    "source_url": "https://www.reuters.com/article/idUSBREA0F0R7/",
+    "dating_accuracy": "exact_day"
+  },
+  {
+    "event_name": "Кульминация столкновений на Майдане",
+    "event_name_en": "Violent clashes climax in Kyiv",
+    "start_date": "2014-02-18",
+    "end_date": "2014-02-20",
+    "category": "Armed Clashes / Crisis",
+    "region": "Kyiv, Ukraine",
+    "description": "Ожесточенные столкновения, стрельба на ул. Институтской, гибель десятков протестующих и сотрудников правоохранительных органов.",
+    "source_url": "https://www.theguardian.com/world/2014/feb/20/ukraine-death-toll-rises-kiev",
+    "dating_accuracy": "exact_day"
+  },
+  {
+    "event_name": "Смена власти в Киеве / Отстранение Януковича",
+    "event_name_en": "Kyiv government change / Yanukovych ousted",
+    "start_date": "2014-02-22",
+    "end_date": "2014-02-22",
+    "category": "Political Change",
+    "region": "Kyiv, Ukraine",
+    "description": "Верховная Рада Украины приняла постановление о самоустранении президента Виктора Януковича и назначила досрочные выборы.",
+    "source_url": "https://www.bbc.com/news/world-europe-26304842",
+    "dating_accuracy": "exact_day"
+  },
+  {
+    "event_name": "Протесты в Севастополе / Провозглашение Чалого",
+    "event_name_en": "Sevastopol rally / Pro-Russian mobilization",
+    "start_date": "2014-02-23",
+    "end_date": "2014-02-23",
+    "category": "Political / Mobilization",
+    "region": "Crimea, Sevastopol",
+    "description": "Многотысячный митинг в Севастополе, провозглашение Алексея Чалого 'народным мэром', отказ подчиняться Киеву.",
+    "source_url": "https://tass.ru/mezhdunarodnaya-panorama/1000624",
+    "dating_accuracy": "exact_day"
+  },
+  {
+    "event_name": "Захват административных зданий в Крыму",
+    "event_name_en": "Crimean administrative buildings seized",
+    "start_date": "2014-02-27",
+    "end_date": "2014-02-27",
+    "category": "Military Operation",
+    "region": "Simferopol, Crimea",
+    "description": "Вооруженные люди без знаков различия захватили здания Верховного Совета и Совета министров АР Крым в Симферополе.",
+    "source_url": "https://www.reuters.com/article/idUSBREA1Q0CG/",
+    "dating_accuracy": "exact_day"
+  },
+  {
+    "event_name": "Совет Федерации разрешил ввод войск в Украину",
+    "event_name_en": "Russian Federation Council authorizes troop deployment",
+    "start_date": "2014-03-01",
+    "end_date": "2014-03-01",
+    "category": "Military / Diplomatic",
+    "region": "Moscow / Crimea",
+    "description": "Совет Федерации РФ единогласно удовлетворил обращение президента Владимира Путина об использовании Вооруженных сил РФ на территории Украины.",
+    "source_url": "https://ria.ru/20140301/997677598.html",
+    "dating_accuracy": "exact_day"
+  },
+  {
+    "event_name": "Референдум о статусе Крыма",
+    "event_name_en": "Crimea referendum",
+    "start_date": "2014-03-16",
+    "end_date": "2014-03-16",
+    "category": "Referendum / Political",
+    "region": "Crimea",
+    "description": "Проведение референдума о статусе полуострова Крым и вхождении в состав Российской Федерации.",
+    "source_url": "https://www.bbc.com/news/world-europe-26606097",
+    "dating_accuracy": "exact_day"
+  },
+  {
+    "event_name": "Подписание договора о принятии Крыма в состав РФ",
+    "event_name_en": "Annexation treaty signed",
+    "start_date": "2014-03-18",
+    "end_date": "2014-03-18",
+    "category": "Annexation / Treaty",
+    "region": "Moscow, Russia",
+    "description": "В Георгиевском зале Кремля подписан межгосударственный договор о принятии Республики Крым в состав Российской Федерации.",
+    "source_url": "http://kremlin.ru/events/president/news/20605",
+    "dating_accuracy": "exact_day"
+  },
+  {
+    "event_name": "Ратификация договора парламентом РФ",
+    "event_name_en": "Treaty ratification by Russian Parliament",
+    "start_date": "2014-03-21",
+    "end_date": "2014-03-21",
+    "category": "Legislative / Annexation",
+    "region": "Moscow, Russia",
+    "description": "Совет Федерации РФ ратифицировал договор и одобрил федеральный конституционный закон о принятии Крыма.",
+    "source_url": "https://tass.ru/politika/1064560",
+    "dating_accuracy": "exact_day"
+  },
+  {
+    "event_name": "Начало боевых действий в Славянске / АТО",
+    "event_name_en": "Seizure of Sloviansk / ATO announced",
+    "start_date": "2014-04-12",
+    "end_date": "2014-04-14",
+    "category": "Armed Conflict",
+    "region": "Donbas, Ukraine",
+    "description": "Захват Славянска отрядом под командованием Стрелкова (Гиркина); объявление СНБО Украины о начале Антитеррористической операции (АТО).",
+    "source_url": "https://www.reuters.com/article/idUSBREA3C08V/",
+    "dating_accuracy": "exact_day"
+  },
+  {
+    "event_name": "Крушение рейса MH17 над Донбассом",
+    "event_name_en": "Malaysia Airlines Flight MH17 shootdown",
+    "start_date": "2014-07-17",
+    "end_date": "2014-07-17",
+    "category": "Military / Air Disaster",
+    "region": "Donetsk Oblast, Ukraine",
+    "description": "Пассажирский Boeing 777 сбит зенитным ракетным комплексом над востоком Украины, гибель 298 человек.",
+    "source_url": "https://www.bbc.com/news/world-europe-28357880",
+    "dating_accuracy": "exact_day"
+  },
+  {
+    "event_name": "Подписание Первого Минского протокола",
+    "event_name_en": "Minsk I Protocol signed",
+    "start_date": "2014-09-05",
+    "end_date": "2014-09-05",
+    "category": "Diplomatic / Ceasefire",
+    "region": "Minsk, Belarus",
+    "description": "Подписание соглашения о прекращении огня на Донбассе трехсторонней контактной группой.",
+    "source_url": "https://www.osce.org/home/123257",
+    "dating_accuracy": "exact_day"
+  },
+  {
+    "event_name": "Инцидент в Керченском проливе",
+    "event_name_en": "Kerch Strait incident",
+    "start_date": "2018-11-25",
+    "end_date": "2018-11-25",
+    "category": "Naval Clash",
+    "region": "Kerch Strait / Black Sea",
+    "description": "Пограничные корабли ФСБ РФ с применением оружия задержали три корабля ВМС Украины.",
+    "source_url": "https://www.bbc.com/news/world-europe-46338671",
+    "dating_accuracy": "exact_day"
+  },
+  {
+    "event_name": "Признание независимости ДНР и ЛНР Россией",
+    "event_name_en": "Russia recognizes DNR and LNR independence",
+    "start_date": "2022-02-21",
+    "end_date": "2022-02-21",
+    "category": "Political / Diplomatic",
+    "region": "Moscow, Russia",
+    "description": "Президент РФ подписал указы о признании независимости Донецкой и Луганской Народных Республик.",
+    "source_url": "http://kremlin.ru/events/president/news/67828",
+    "dating_accuracy": "exact_day"
+  },
+  {
+    "event_name": "Начало полномасштабного военного вторжения в Украину",
+    "event_name_en": "Full-scale military invasion of Ukraine begins",
+    "start_date": "2022-02-24",
+    "end_date": "2022-02-24",
+    "category": "Armed Conflict / War",
+    "region": "Ukraine / Russia",
+    "description": "Объявление специальной военной операции, ракетные удары и наступление сухопутных сил ВС РФ.",
+    "source_url": "https://www.bbc.com/news/world-europe-60503037",
+    "dating_accuracy": "exact_day"
+  }
+]
