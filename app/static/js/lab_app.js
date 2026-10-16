@@ -195,6 +195,7 @@ const I18N = {
     custom_event_title: "Проверка пользовательского исторического события",
     custom_event_desc: "Введите любую дату и название события для расчета эмпирического p-value и процентиля:",
     custom_event_ph: "Название события",
+    custom_event_default_val: "Ввод войск в Крым",
     btn_calc_event: "Рассчитать",
 
     // Audit Tab
@@ -555,6 +556,7 @@ const I18N = {
     custom_event_title: "Evaluate Custom Historical Event",
     custom_event_desc: "Enter any historical date and event name to compute empirical p-value and percentile:",
     custom_event_ph: "Event title",
+    custom_event_default_val: "Crimea military deployment",
     btn_calc_event: "Calculate",
 
     // Audit Tab
@@ -740,6 +742,13 @@ document.addEventListener("DOMContentLoaded", () => {
   loadTimeline();
   loadAuditLogs();
   loadMessagesTable();
+
+  const customEventInput = document.getElementById("custom-event-name");
+  if (customEventInput) {
+    customEventInput.addEventListener("input", () => {
+      customEventInput.dataset.userEdited = "true";
+    });
+  }
 });
 
 function t(key) {
@@ -763,6 +772,17 @@ function updateTranslations() {
     const key = el.getAttribute("data-i18n-ph");
     if (I18N[currentLang][key]) {
       el.setAttribute("placeholder", I18N[currentLang][key]);
+    }
+  });
+  document.querySelectorAll("[data-i18n-val]").forEach(el => {
+    const key = el.getAttribute("data-i18n-val");
+    if (I18N[currentLang][key]) {
+      const prevRu = I18N['ru'] ? I18N['ru'][key] : null;
+      const prevEn = I18N['en'] ? I18N['en'][key] : null;
+      if (!el.dataset.userEdited || el.value === prevRu || el.value === prevEn) {
+        el.value = I18N[currentLang][key];
+        delete el.dataset.userEdited;
+      }
     }
   });
 

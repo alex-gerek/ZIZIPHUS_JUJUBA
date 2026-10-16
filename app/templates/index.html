@@ -576,7 +576,7 @@
         <p data-i18n="custom_event_desc">Введите любую дату и название события для расчета эмпирического p-value и процентиля:</p>
         <div style="display:flex; gap:1rem; margin-top:1rem; align-items:center; flex-wrap:wrap;">
           <input type="date" id="custom-event-date" class="search-input" value="2014-03-01">
-          <input type="text" id="custom-event-name" class="search-input" data-i18n-ph="custom_event_ph" placeholder="Название события" style="width:300px;" value="Ввод войск в Крым">
+          <input type="text" id="custom-event-name" class="search-input" data-i18n-ph="custom_event_ph" data-i18n-val="custom_event_default_val" placeholder="Название события" style="width:300px;" value="Ввод войск в Крым">
           <button class="btn-action" onclick="evaluateCustomEvent()" data-i18n="btn_calc_event">Рассчитать</button>
         </div>
         <div id="custom-event-result" style="margin-top:1rem;"></div>
@@ -1046,6 +1046,6 @@
     <div data-i18n="footer_sub">Local analytical instance &bull; Windows 64-bit</div>
   </footer>
 
-  <script src="/static/js/lab_app.js?v=20261016_2"></script>
+  <script src="/static/js/lab_app.js?v=20261016_3"></script>
 </body>
 </html>
