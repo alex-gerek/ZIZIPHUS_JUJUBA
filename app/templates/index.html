@@ -26,8 +26,8 @@
     </div>
     <div class="header-controls">
       <div class="station-badge">
-        <div class="pulse-dot"></div>
-        <span data-i18n="station_live">4625 кГц | УВБ-76 | СТАТУС: АКТИВЕН</span>
+        <div class="pulse-dot" style="background-color:var(--color-cyan);"></div>
+        <span data-i18n="station_live">4625 кГц | УВБ-76 | АРХИВНЫЙ РЕЖИМ (2010–2022)</span>
       </div>
       <button id="lang-btn" class="lang-btn" data-i18n="lang_toggle">EN / RU</button>
     </div>
@@ -55,57 +55,265 @@
     
     <!-- 1. OVERVIEW TAB -->
     <div id="tab-overview" class="tab-pane active">
-      <div class="section-header">
-        <div>
-          <h2>Оперативная сводка лаборатории</h2>
-          <p>Метрики радиообмена коротковолновой станции УВБ-76 (The Buzzer) на основе нормализованного архива.</p>
+
+      <!-- 1. INTRODUCTORY HERO SECTION -->
+      <div class="overview-hero">
+        <h2 data-i18n="hero_title">Можно ли обнаружить закономерности в радиообмене, не зная содержания сообщений?</h2>
+        <p data-i18n="hero_p1">
+          ZIZIPHUS JUJUBA — независимый исследовательский проект, посвящённый статистическому анализу открытых архивов коротковолновой радиостанции УВБ-76 (The Buzzer), известной своей работой на частоте 4625 кГц.
+        </p>
+        <p data-i18n="hero_p2">
+          Мы изучаем структуру зарегистрированных радиограмм, частоту их появления, повторяемость кодовых слов и числовых групп, временные закономерности и связи между элементами сообщений.
+        </p>
+        <p data-i18n="hero_p3">
+          Наша цель — исследовать наблюдаемое поведение системы радиообмена с помощью воспроизводимых математических методов, не утверждая, что нам известно содержание или назначение закодированных сообщений.
+        </p>
+      </div>
+
+      <!-- 2. WHY UVB-76 SECTION -->
+      <div class="overview-section">
+        <div class="overview-section-title">
+          <span>&#x25C8;</span> <span data-i18n="why_uvb_title">Почему УВБ-76?</span>
+        </div>
+        <div class="overview-section-subtitle" data-i18n="why_uvb_desc">
+          Коротковолновый феномен любительского радиомониторинга и открытые данные
+        </div>
+        <div class="info-cards-grid">
+          <div class="info-box">
+            <div class="info-box-header">
+              <span style="color:var(--color-cyan);">&#x25C9;</span>
+              <span data-i18n="why_station_head">Радиостанция «Жужжалка»</span>
+            </div>
+            <div class="info-box-body" data-i18n="why_station_body">
+              Коротковолновая радиостанция на частоте 4625 кГц (USB), непрерывно передающая характерный звуковой маркер канала («жужжание») с периодической передачей голосовых радиограмм операторами на русском языке.
+            </div>
+          </div>
+          <div class="info-box">
+            <div class="info-box-header">
+              <span style="color:var(--color-emerald);">&#x25C9;</span>
+              <span data-i18n="why_interest_head">Внимание радионаблюдателей</span>
+            </div>
+            <div class="info-box-body" data-i18n="why_interest_body">
+              Станция действует более 40 лет и привлекает международное сообщество любителей круглосуточным любительским мониторингом и загадочностью формализованного радиообмена.
+            </div>
+          </div>
+          <div class="info-box">
+            <div class="info-box-header">
+              <span style="color:var(--color-amber);">&#x25C9;</span>
+              <span data-i18n="why_anatomy_head">Анатомия радиограммы</span>
+            </div>
+            <div class="info-box-body" data-i18n="why_anatomy_body">
+              Типичное сообщение содержит позывной (УЗБ-76, МДЖБ, ЖУОЗ, АНВФ, НЖТИ), фонетическое кодовое слово (ПАСКОИТ, ГАШЕНИЕ) и числовые группы (4-, 5- или 8-значные комбинации, например 7724 8209).
+            </div>
+          </div>
+          <div class="info-box">
+            <div class="info-box-header">
+              <span style="color:var(--color-purple);">&#x25C9;</span>
+              <span data-i18n="why_archive_head">Научный интерес архивов</span>
+            </div>
+            <div class="info-box-body" data-i18n="why_archive_body">
+              Публичные архивы энтузиастов (Priyom.org и независимые WebSDR-логи) содержат тысячи верифицированных радиограмм за более чем 12 лет — редкий массив для анализа временных рядов, теории сетей и проверки гипотез.
+            </div>
+          </div>
         </div>
       </div>
-      
-      <div class="grid-cards">
-        <div class="card">
-          <div class="card-title" data-i18n="ov_primary_msgs">Основных радиограмм</div>
-          <div id="stat-primary-msgs" class="card-value cyan">0</div>
-          <div class="card-desc">Чистые уникальные передачи</div>
+
+      <!-- 3. RESEARCH QUESTIONS SECTION -->
+      <div class="overview-section">
+        <div class="overview-section-title">
+          <span>&#x25C8;</span> <span data-i18n="rq_title">Исследовательские вопросы</span>
         </div>
-        <div class="card">
-          <div class="card-title" data-i18n="ov_raw_entries">Всего архивных записей</div>
-          <div id="stat-raw-entries" class="card-value">0</div>
-          <div class="card-desc">Включая повторы и аномалии</div>
+        <div class="overview-section-subtitle" data-i18n="rq_desc">
+          Четыре фундаментальных направления математического анализа лаборатории
         </div>
-        <div class="card">
-          <div class="card-title" data-i18n="ov_duplicates">Дубликатов / Аномалий</div>
-          <div id="stat-duplicates" class="card-value amber">0</div>
-          <div class="card-desc">Отмечены в журнале аудита</div>
-        </div>
-        <div class="card">
-          <div class="card-title" data-i18n="ov_blocks">Распознанных кодоблоков</div>
-          <div id="stat-blocks" class="card-value emerald">0</div>
-          <div class="card-desc">Структуры: Слово + 4+4 цифры</div>
-        </div>
-        <div class="card">
-          <div class="card-title" data-i18n="ov_codewords">Уникальных кодовых слов</div>
-          <div id="stat-codewords" class="card-value cyan">0</div>
-          <div class="card-desc">Лексический фонд позывных</div>
-        </div>
-        <div class="card">
-          <div class="card-title" data-i18n="ov_numbers">Уникальных 8-знаков</div>
-          <div id="stat-numbers" class="card-value purple">0</div>
-          <div class="card-desc">8-значные цифровые группы</div>
-        </div>
-        <div class="card">
-          <div class="card-title" data-i18n="ov_audit_items">Записей аудита</div>
-          <div id="stat-audit" class="card-value amber">0</div>
-          <div class="card-desc">Протокол прозрачности данных</div>
-        </div>
-        <div class="card">
-          <div class="card-title" data-i18n="ov_events">Исторических событий</div>
-          <div id="stat-events" class="card-value emerald">0</div>
-          <div class="card-desc">События кризиса 2013-2022</div>
+        <div class="info-cards-grid">
+          <div class="info-box" style="border-top:3px solid var(--color-cyan);">
+            <div class="info-box-header">
+              <span data-i18n="rq_card1_title">1. Интенсивность во времени</span>
+            </div>
+            <div class="info-box-body" data-i18n="rq_card1_body">
+              Как меняется интенсивность зарегистрированного радиообмена во времени? (Суточные циклы, дни недели, сезонные спады и распределение пауз между радиограммами).
+            </div>
+          </div>
+          <div class="info-box" style="border-top:3px solid var(--color-emerald);">
+            <div class="info-box-header">
+              <span data-i18n="rq_card2_title">2. Повторяемость элементов</span>
+            </div>
+            <div class="info-box-body" data-i18n="rq_card2_body">
+              Какие слова, числа и сочетания повторяются? (Частотные профили слов, повторное использование 8-значных числовых групп и пополнение словаря по закону Хипса).
+            </div>
+          </div>
+          <div class="info-box" style="border-top:3px solid var(--color-purple);">
+            <div class="info-box-header">
+              <span data-i18n="rq_card3_title">3. Сетевые структуры</span>
+            </div>
+            <div class="info-box-body" data-i18n="rq_card3_body">
+              Образуются ли устойчивые структуры и кластеры связей? (Топологические графы совместной передачи слов в составных радиограммах и общих числовых мостов).
+            </div>
+          </div>
+          <div class="info-box" style="border-top:3px solid var(--color-amber);">
+            <div class="info-box-header">
+              <span data-i18n="rq_card4_title">4. Статистические аномалии</span>
+            </div>
+            <div class="info-box-body" data-i18n="rq_card4_body">
+              Какие отклонения статистически необычны и как на них влияет полнота архива? (Робастный метод MAD, пуассоновские вероятности и аудит технических лакун радиоприёма).
+            </div>
+          </div>
         </div>
       </div>
-      
-      <div id="overview-chart" style="width:100%; height:380px; margin-bottom:2rem;"></div>
+
+      <!-- 4. RESEARCH PIPELINE SECTION -->
+      <div class="overview-section">
+        <div class="overview-section-title">
+          <span>&#x25C8;</span> <span data-i18n="pipe_title">Как работает исследование</span>
+        </div>
+        <div class="overview-section-subtitle" data-i18n="pipe_desc">
+          Последовательный аналитический процесс от первичных любительских логов к доказательным выводам
+        </div>
+        <div class="pipeline-flow">
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">Этап 01</div>
+            <div class="pipeline-step-title" data-i18n="pipe_s1_name">1. Открытые архивы</div>
+            <div class="pipeline-step-desc" data-i18n="pipe_s1_desc">Сбор первичных журналов радионаблюдений за 2010–2022 гг. из открытых независимых источников.</div>
+          </div>
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">Этап 02</div>
+            <div class="pipeline-step-title" data-i18n="pipe_s2_name">2. Проверка и очистка</div>
+            <div class="pipeline-step-desc" data-i18n="pipe_s2_desc">Нормализация текста, аудит дубликатов, устранение технических артефактов и выделение кодоблоков.</div>
+          </div>
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">Этап 03</div>
+            <div class="pipeline-step-title" data-i18n="pipe_s3_name">3. Статистический анализ</div>
+            <div class="pipeline-step-desc" data-i18n="pipe_s3_desc">Расчёт суточных профилей, интервалов Δt, коэффициентов вариации и распределений активности.</div>
+          </div>
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">Этап 04</div>
+            <div class="pipeline-step-title" data-i18n="pipe_s4_name">4. Графы связей</div>
+            <div class="pipeline-step-desc" data-i18n="pipe_s4_desc">Построение топологических сетей совместной встречаемости слов и мостовых цифровых комбинаций.</div>
+          </div>
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">Этап 05</div>
+            <div class="pipeline-step-title" data-i18n="pipe_s5_name">5. Проверка гипотез</div>
+            <div class="pipeline-step-desc" data-i18n="pipe_s5_desc">Применение тестов перестановок Монте-Карло, модифицированных Z-оценок и многооконных Event-Study.</div>
+          </div>
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">Этап 06</div>
+            <div class="pipeline-step-title" data-i18n="pipe_s6_name">6. Исследовательские выводы</div>
+            <div class="pipeline-step-desc" data-i18n="pipe_s6_desc">Фиксация подтверждённых эмпирических фактов, отсеивание мифов и документирование ограничений.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. OUR ARCHIVE IN NUMBERS SECTION -->
+      <div class="overview-section">
+        <div class="overview-section-title">
+          <span>&#x25C8;</span> <span data-i18n="stats_title">Наш исследовательский архив в цифрах</span>
+        </div>
+        <div class="disclaimer-callout">
+          <span style="font-weight:bold;">&#x26A0;</span> <span data-i18n="stats_disclaimer">Важное методологическое замечание: Представленные показатели характеризуют нормализованный исследовательский массив данных лаборатории, а не весь радиообмен станции за всю историю. В публичных любительских архивах неизбежно присутствуют лакуны (технические перебои интернет-приёмников, пропуски наблюдателей). Отсутствие записей за какой-либо день не является доказательством радиомолчания в реальном эфире.</span>
+        </div>
+
+        <div class="grid-cards">
+          <div class="card">
+            <div class="card-title" data-i18n="ov_primary_msgs">Основных радиограмм</div>
+            <div id="stat-primary-msgs" class="card-value cyan">0</div>
+            <div class="card-desc" data-i18n="ov_primary_msgs_desc">Чистые уникальные передачи (после дедупликации)</div>
+          </div>
+          <div class="card">
+            <div class="card-title" data-i18n="ov_raw_entries">Всего архивных записей</div>
+            <div id="stat-raw-entries" class="card-value">0</div>
+            <div class="card-desc" data-i18n="ov_raw_entries_desc">Общий массив строк до очистки</div>
+          </div>
+          <div class="card">
+            <div class="card-title" data-i18n="ov_duplicates">Дубликатов / Аномалий</div>
+            <div id="stat-duplicates" class="card-value amber">0</div>
+            <div class="card-desc" data-i18n="ov_duplicates_desc">Повторы разных слушателей и технические аномалии</div>
+          </div>
+          <div class="card">
+            <div class="card-title" data-i18n="ov_blocks">Распознанных кодоблоков</div>
+            <div id="stat-blocks" class="card-value emerald">0</div>
+            <div class="card-desc" data-i18n="ov_blocks_desc">Структуры вида: Кодовое слово + 4+4 цифры</div>
+          </div>
+          <div class="card">
+            <div class="card-title" data-i18n="ov_codewords">Уникальных кодовых слов</div>
+            <div id="stat-codewords" class="card-value cyan">0</div>
+            <div class="card-desc" data-i18n="ov_codewords_desc">Лексический фонд позывных за 12 лет</div>
+          </div>
+          <div class="card">
+            <div class="card-title" data-i18n="ov_numbers">Уникальных 8-знаков</div>
+            <div id="stat-numbers" class="card-value purple">0</div>
+            <div class="card-desc" data-i18n="ov_numbers_desc">Уникальные 8-значные цифровые группы</div>
+          </div>
+          <div class="card">
+            <div class="card-title" data-i18n="ov_audit_items">Записей аудита</div>
+            <div id="stat-audit" class="card-value amber">0</div>
+            <div class="card-desc" data-i18n="ov_audit_desc">Прозрачный журнал верификации данных</div>
+          </div>
+          <div class="card">
+            <div class="card-title" data-i18n="ov_events">Исторических событий</div>
+            <div id="stat-events" class="card-value emerald">0</div>
+            <div class="card-desc" data-i18n="ov_events_desc">Контрольный календарь внешних событий</div>
+          </div>
+        </div>
+        
+        <div id="overview-chart" style="width:100%; height:380px; margin-bottom:1.5rem;"></div>
+      </div>
+
+      <!-- 6. SCIENTIFIC LIMITATIONS SECTION -->
+      <div class="overview-section">
+        <div class="overview-section-title">
+          <span>&#x25C8;</span> <span data-i18n="limits_title">Научные ограничения</span>
+        </div>
+        <div class="overview-section-subtitle" data-i18n="limits_desc">
+          Ключевые методологические рамки, необходимые для корректной интерпретации результатов
+        </div>
+        <div class="info-cards-grid">
+          <div class="limit-card">
+            <div class="limit-card-title">
+              <span>&#x26A0;</span> <span data-i18n="limit_gaps_title">Неполнота публичных архивов</span>
+            </div>
+            <div class="limit-card-desc" data-i18n="limit_gaps_desc">
+              Логи велись добровольцами и радиолюбителями. Пропуски в данных часто отражают сбои интернет-приёмников или отсутствие дежурного наблюдателя, а не тишину в эфире.
+            </div>
+          </div>
+          <div class="limit-card">
+            <div class="limit-card-title">
+              <span>&#x26A0;</span> <span data-i18n="limit_errors_title">Возможные ошибки транскрипции</span>
+            </div>
+            <div class="limit-card-desc" data-i18n="limit_errors_desc">
+              Радиограммы принимались в условиях атмосферных шумов и преднамеренных помех, что допускает опечатки операторов при расшифровке редких слов и искажение цифр.
+            </div>
+          </div>
+          <div class="limit-card">
+            <div class="limit-card-title">
+              <span>&#x26A0;</span> <span data-i18n="limit_models_title">Ограничения статистических моделей</span>
+            </div>
+            <div class="limit-card-desc" data-i18n="limit_models_desc">
+              Статистическое совпадение всплеска активности с внешней датой не доказывает причинно-следственную связь (Post hoc ergo propter hoc).
+            </div>
+          </div>
+          <div class="limit-card">
+            <div class="limit-card-title">
+              <span>&#x26A0;</span> <span data-i18n="limit_meaning_title">Невозможность определить смысл</span>
+            </div>
+            <div class="limit-card-desc" data-i18n="limit_meaning_desc">
+              Математический анализ исследует внешнюю структуру радиообмена, но принципиально не позволяет узнать истинное назначение кодов без оригинальных армейских кодовых таблиц.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. WHY ZIZIPHUS JUJUBA SECTION -->
+      <div class="jujube-about-box">
+        <img src="/static/img/ziziphus_icon.png" alt="Ziziphus Jujuba" class="jujube-about-img">
+        <div class="jujube-about-content">
+          <h4 data-i18n="jujube_title">Почему ZIZIPHUS JUJUBA?</h4>
+          <p data-i18n="jujube_desc">
+            Ziziphus jujuba — ботаническое название китайского финика (унаби, ююба) и имя нашего исследовательского проекта. В открытых любительских журналах радиостанции УВБ-76 слово «ЗИЗИФУС» встречается в ряде записей, однако проект не считает эту связь доказательством скрытых гипотез до полной перепроверки каждого первичного источника. Название проекта символизирует беспристрастное научное исследование.
+          </p>
+        </div>
+      </div>
+
     </div>
 
     <!-- 2. TARGET SIGNALS TAB -->

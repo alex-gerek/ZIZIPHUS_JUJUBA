@@ -7,7 +7,7 @@
 // Bilingual dictionary
 const I18N = {
   ru: {
-    station_live: "4625 кГц | УВБ-76 | СТАТУС: АКТИВЕН",
+    station_live: "4625 кГц | УВБ-76 | АРХИВНЫЙ РЕЖИМ (2010–2022)",
     lang_toggle: "EN / RU",
     tab_overview: "ОБЗОР / СТАТИСТИКА",
     tab_targets: "ЗИЗИФУС И ЦЕЛЕВЫЕ СИГНАЛЫ",
@@ -17,16 +17,83 @@ const I18N = {
     tab_audit: "АУДИТ И ОЧИСТКА",
     tab_messages: "АРХИВ РАДИОГРАММ",
     tab_exports: "ЭКСПОРТ ДАННЫХ",
-    
-    // Overview
+
+    // Overview Hero & Explanations
+    hero_title: "Можно ли обнаружить закономерности в радиообмене, не зная содержания сообщений?",
+    hero_p1: "ZIZIPHUS JUJUBA — независимый исследовательский проект, посвящённый статистическому анализу открытых архивов коротковолновой радиостанции УВБ-76 (The Buzzer), известной своей работой на частоте 4625 кГц.",
+    hero_p2: "Мы изучаем структуру зарегистрированных радиограмм, частоту их появления, повторяемость кодовых слов и числовых групп, временные закономерности и связи между элементами сообщений.",
+    hero_p3: "Наша цель — исследовать наблюдаемое поведение системы радиообмена с помощью воспроизводимых математических методов, не утверждая, что нам известно содержание или назначение закодированных сообщений.",
+
+    why_uvb_title: "Почему УВБ-76?",
+    why_uvb_desc: "Коротковолновый феномен любительского радиомониторинга и открытые данные",
+    why_station_head: "Радиостанция «Жужжалка»",
+    why_station_body: "Коротковолновая радиостанция на частоте 4625 кГц (USB), непрерывно передающая характерный звуковой маркер канала («жужжание») с периодической передачей голосовых радиограмм операторами на русском языке.",
+    why_interest_head: "Внимание радионаблюдателей",
+    why_interest_body: "Станция действует более 40 лет и привлекает международное сообщество любителей круглосуточным любительским мониторингом и загадочностью формализованного радиообмена.",
+    why_anatomy_head: "Анатомия радиограммы",
+    why_anatomy_body: "Типичное сообщение содержит позывной (УЗБ-76, МДЖБ, ЖУОЗ, АНВФ, НЖТИ), фонетическое кодовое слово (ПАСКОИТ, ГАШЕНИЕ) и числовые группы (4-, 5- или 8-значные комбинации, например 7724 8209).",
+    why_archive_head: "Научный интерес архивов",
+    why_archive_body: "Публичные архивы энтузиастов (Priyom.org и независимые WebSDR-логи) содержат тысячи верифицированных радиограмм за более чем 12 лет — редкий массив для анализа временных рядов, теории сетей и проверки гипотез.",
+
+    rq_title: "Исследовательские вопросы",
+    rq_desc: "Четыре фундаментальных направления математического анализа лаборатории",
+    rq_card1_title: "1. Интенсивность во времени",
+    rq_card1_body: "Как меняется интенсивность зарегистрированного радиообмена во времени? (Суточные циклы, дни недели, сезонные спады и распределение пауз между радиограммами).",
+    rq_card2_title: "2. Повторяемость элементов",
+    rq_card2_body: "Какие слова, числа и сочетания повторяются? (Частотные профили слов, повторное использование 8-значных числовых групп и пополнение словаря по закону Хипса).",
+    rq_card3_title: "3. Сетевые структуры",
+    rq_card3_body: "Образуются ли устойчивые структуры и кластеры связей? (Топологические графы совместной передачи слов в составных радиограммах и общих числовых мостов).",
+    rq_card4_title: "4. Статистические аномалии",
+    rq_card4_body: "Какие отклонения статистически необычны и как на них влияет полнота архива? (Робастный метод MAD, пуассоновские вероятности и аудит технических лакун радиоприёма).",
+
+    pipe_title: "Как работает исследование",
+    pipe_desc: "Последовательный аналитический процесс от первичных любительских логов к доказательным выводам",
+    pipe_s1_name: "1. Открытые архивы",
+    pipe_s1_desc: "Сбор первичных журналов радионаблюдений за 2010–2022 гг. из открытых независимых источников.",
+    pipe_s2_name: "2. Проверка и очистка данных",
+    pipe_s2_desc: "Нормализация текста, аудит дубликатов, устранение технических артефактов и выделение кодоблоков.",
+    pipe_s3_name: "3. Статистический анализ",
+    pipe_s3_desc: "Расчёт суточных профилей, интервалов Δt, коэффициентов вариации и распределений активности.",
+    pipe_s4_name: "4. Графы связей",
+    pipe_s4_desc: "Построение топологических сетей совместной встречаемости слов и мостовых цифровых комбинаций.",
+    pipe_s5_name: "5. Проверка гипотез",
+    pipe_s5_desc: "Применение тестов перестановок Монте-Карло, модифицированных Z-оценок и многооконных Event-Study.",
+    pipe_s6_name: "6. Исследовательские выводы",
+    pipe_s6_desc: "Фиксация подтверждённых эмпирических фактов, отсеивание мифов и документирование ограничений.",
+
+    stats_title: "Наш исследовательский архив в цифрах",
+    stats_disclaimer: "Важное методологическое замечание: Представленные показатели характеризуют нормализованный исследовательский массив данных лаборатории, а не весь радиообмен станции за всю историю. В публичных любительских архивах неизбежно присутствуют лакуны (технические перебои интернет-приёмников, пропуски наблюдателей). Отсутствие записей за какой-либо день не является доказательством радиомолчания в реальном эфире.",
+
     ov_primary_msgs: "Основных радиограмм",
+    ov_primary_msgs_desc: "Чистые уникальные передачи (после дедупликации)",
     ov_raw_entries: "Всего архивных записей",
+    ov_raw_entries_desc: "Общий массив строк до очистки",
     ov_duplicates: "Дубликатов / Аномалий",
+    ov_duplicates_desc: "Повторы разных слушателей и технические аномалии",
     ov_blocks: "Распознанных кодоблоков",
+    ov_blocks_desc: "Структуры вида: Кодовое слово + 4+4 цифры",
     ov_codewords: "Уникальных кодовых слов",
+    ov_codewords_desc: "Лексический фонд позывных за 12 лет",
     ov_numbers: "Уникальных 8-знаков",
+    ov_numbers_desc: "Уникальные 8-значные цифровые группы",
     ov_audit_items: "Записей журнала аудита",
+    ov_audit_desc: "Прозрачный журнал верификации данных",
     ov_events: "Исторических событий",
+    ov_events_desc: "Контрольный календарь внешних событий",
+
+    limits_title: "Научные ограничения",
+    limits_desc: "Ключевые методологические рамки, необходимые для корректной интерпретации результатов",
+    limit_gaps_title: "Неполнота публичных архивов",
+    limit_gaps_desc: "Логи велись добровольцами и радиолюбителями. Пропуски в данных часто отражают сбои интернет-приёмников или отсутствие дежурного наблюдателя, а не тишину в эфире.",
+    limit_errors_title: "Возможные ошибки транскрипции",
+    limit_errors_desc: "Радиограммы принимались в условиях атмосферных шумов и преднамеренных помех, что допускает опечатки операторов при расшифровке редких слов и искажение цифр.",
+    limit_models_title: "Ограничения статистических моделей",
+    limit_models_desc: "Статистическое совпадение всплеска активности с внешней датой не доказывает причинно-следственную связь (Post hoc ergo propter hoc).",
+    limit_meaning_title: "Невозможность определить смысл",
+    limit_meaning_desc: "Математический анализ исследует внешнюю структуру радиообмена, но принципиально не позволяет узнать истинное назначение кодов без оригинальных армейских кодовых таблиц.",
+
+    jujube_title: "Почему ZIZIPHUS JUJUBA?",
+    jujube_desc: "Ziziphus jujuba — ботаническое название китайского финика (унаби, ююба) и имя нашего исследовательского проекта. В открытых любительских журналах радиостанции УВБ-76 слово «ЗИЗИФУС» встречается в ряде записей, однако проект не считает эту связь доказательством скрытых гипотез до полной перепроверки каждого первичного источника. Название проекта символизирует беспристрастное научное исследование.",
     
     // Targets
     target_box_title: "ОПЕРАТИВНОЕ ПОДТВЕРЖДЕНИЕ СВЯЗИ ЗИЗИФУС — ПАСКОИТ (7724 8209)",
@@ -136,7 +203,7 @@ const I18N = {
     rf_limitations_head: "МЕТОДОЛОГИЧЕСКИЕ ОГРАНИЧЕНИЯ ИССЛЕДОВАНИЯ"
   },
   en: {
-    station_live: "4625 kHz | UVB-76 | STATUS: ACTIVE",
+    station_live: "4625 kHz | UVB-76 | ARCHIVE RESEARCH MODE (2010–2022)",
     lang_toggle: "RU / EN",
     tab_overview: "OVERVIEW / METRICS",
     tab_traffic: "TRAFFIC BEHAVIOR",
@@ -151,15 +218,83 @@ const I18N = {
     tab_audit: "AUDIT & DEDUPLICATION",
     tab_messages: "RADIOGRAM ARCHIVE",
     tab_exports: "EXPORTS",
-    
+
+    // Overview Hero & Explanations
+    hero_title: "Can patterns be discovered in radio traffic without knowing message contents?",
+    hero_p1: "ZIZIPHUS JUJUBA is an independent research project dedicated to the statistical analysis of open archives from the shortwave radio station UVB-76 (The Buzzer), transmitting on 4625 kHz.",
+    hero_p2: "We study the structure of logged radiograms, their frequency, repetitions of codewords and number groups, temporal patterns, and connections between message elements.",
+    hero_p3: "Our goal is to investigate the observable behavior of the radio traffic system using reproducible mathematical methods, without claiming to know the true content or operational purpose of encoded transmissions.",
+
+    why_uvb_title: "Why UVB-76?",
+    why_uvb_desc: "Shortwave radio-monitoring phenomenon and public open data",
+    why_station_head: "The Buzzer Station",
+    why_station_body: "A shortwave radio station broadcasting on 4625 kHz (USB), continuously transmitting a channel marker tone ('buzz') with periodic voice radiograms read by human operators in Russian.",
+    why_interest_head: "Radio-Monitoring Community",
+    why_interest_body: "Operational for over 40 years, it draws a global radio-monitoring community due to around-the-clock WebSDR recording and the intrigue of formalized military radio protocol.",
+    why_anatomy_head: "Anatomy of a Radiogram",
+    why_anatomy_body: "A standard transmission consists of a station callsign (UZB-76, MDZhB, ZhUOZ, ANVF, NZhTI), a phonetic codeword (e.g. PASKOIT, GASHENIE), and numerical groups (4, 5, or 8-digit combinations, e.g. 7724 8209).",
+    why_archive_head: "Scientific Value of Archives",
+    why_archive_body: "Public archives (Priyom.org and volunteer WebSDR logs) contain thousands of verified logs over 12+ years, providing a rare empirical dataset for time series analysis, graph theory, and hypothesis testing.",
+
+    rq_title: "Research Questions",
+    rq_desc: "Four fundamental directions of statistical inquiry in this laboratory",
+    rq_card1_title: "1. Traffic Intensity Over Time",
+    rq_card1_body: "How does the intensity of logged radio traffic change over time? (Diurnal cycles, day-of-week patterns, seasonal variations, and inter-message intervals).",
+    rq_card2_title: "2. Repetition of Elements",
+    rq_card2_body: "Which words, numbers, and pairs repeat? (Codeword frequency profiles, re-use of 8-digit number groups, and vocabulary discovery governed by Heaps' Law).",
+    rq_card3_title: "3. Relational Structures & Clusters",
+    rq_card3_body: "Do stable network structures and relational clusters emerge? (Topological graphs of word co-occurrence in composite broadcasts and shared numerical bridges).",
+    rq_card4_title: "4. Statistical Anomalies",
+    rq_card4_body: "Which deviations are statistically anomalous, and how does archival completeness affect them? (Robust MAD method, Poisson probabilities, and audit of receiver coverage gaps).",
+
+    pipe_title: "How the Research Works",
+    pipe_desc: "A sequential analytical pipeline from raw listener logs to empirical findings",
+    pipe_s1_name: "1. Open Archives",
+    pipe_s1_desc: "Gathering raw monitoring logs from 2010 to 2022 from open independent sources.",
+    pipe_s2_name: "2. Audit & Data Cleaning",
+    pipe_s2_desc: "Text normalization, duplicate auditing, filtering technical artifacts, and codeblock parsing.",
+    pipe_s3_name: "3. Statistical Analysis",
+    pipe_s3_desc: "Calculating diurnal profiles, Δt intervals, variance coefficients, and activity distributions.",
+    pipe_s4_name: "4. Network Graphs",
+    pipe_s4_desc: "Constructing topological networks of word co-occurrences and bridge digit combinations.",
+    pipe_s5_name: "5. Hypothesis Testing",
+    pipe_s5_desc: "Applying Monte Carlo permutation tests, modified Z-scores, and multi-window Event-Studies.",
+    pipe_s6_name: "6. Research Findings",
+    pipe_s6_desc: "Documenting confirmed empirical facts, refuting unfounded myths, and recording limitations.",
+
+    stats_title: "Our Research Archive in Numbers",
+    stats_disclaimer: "Important methodological note: These metrics characterize the collected and normalized research database of the lab, rather than the station's total transmissions throughout history. Volunteer radio archives inherently contain technical coverage gaps (WebSDR outages, observer absences). The absence of logged entries on a given day does not prove that no transmission took place.",
+
     ov_primary_msgs: "Primary Radiograms",
+    ov_primary_msgs_desc: "Clean unique broadcasts (after deduplication)",
     ov_raw_entries: "Total Raw Log Entries",
+    ov_raw_entries_desc: "Total raw entry count before cleaning",
     ov_duplicates: "Duplicates / Anomalies",
+    ov_duplicates_desc: "Filtered duplicates and technical anomalies",
     ov_blocks: "Parsed Code Blocks",
+    ov_blocks_desc: "Units formatted as: Codeword + 4+4 digits",
     ov_codewords: "Unique Codewords",
+    ov_codewords_desc: "Lexical vocabulary registered over 12 years",
     ov_numbers: "Unique 8-Digit Numbers",
+    ov_numbers_desc: "Distinct 8-digit numerical groups",
     ov_audit_items: "Audit Log Entries",
+    ov_audit_desc: "Transparent data verification log entries",
     ov_events: "Historical Events",
+    ov_events_desc: "Benchmark events for correlation testing",
+
+    limits_title: "Scientific Limitations",
+    limits_desc: "Key methodological constraints essential for correct interpretation of results",
+    limit_gaps_title: "Archival Incompleteness",
+    limit_gaps_desc: "Logs were kept by volunteers. Data gaps frequently reflect WebSDR receiver outages or observer absence, rather than actual radio silence in the air.",
+    limit_errors_title: "Acoustic Transcription Errors",
+    limit_errors_desc: "Radiograms were received through atmospheric noise and interference, admitting typographical errors in rare words or misheard digit groups.",
+    limit_models_title: "Statistical Model Limits",
+    limit_models_desc: "Statistical correlation between transmission density and external dates does not establish a causal relationship (Post hoc ergo propter hoc).",
+    limit_meaning_title: "Inaccessibility of Encoded Meaning",
+    limit_meaning_desc: "Mathematical analysis studies the external structure of radio traffic, but fundamentally cannot determine the true purpose of codes without original military codebooks.",
+
+    jujube_title: "Why ZIZIPHUS JUJUBA?",
+    jujube_desc: "Ziziphus jujuba is the botanical name for the Chinese date (jujube fruit) and the name of our research project. While the word 'ZIZIFUS' appears in certain amateur listener logs of UVB-76, the project does not treat this as proof of speculative theories without rigorous primary source verification. The name embodies objective, impartial scientific inquiry.",
     
     target_box_title: "CONFIRMED SIGNAL INTELLIGENCE: ZIZIPHUS — PASKOIT (7724 8209)",
     target_box_desc: "Primary archive verification confirms: 8-digit sequence 7724 8209 was transmitted on Sep 04, 2014 with PASKOIT (13:24) and retransmitted exactly 28 days later on Oct 02, 2014 with ZIZIPHUS (12:14). This demonstrates cyclic codebook re-use in primary military logs.",
@@ -303,6 +438,10 @@ function setupLanguageToggle() {
     currentLang = currentLang === 'ru' ? 'en' : 'ru';
     btn.textContent = I18N[currentLang].lang_toggle;
     updateTranslations();
+    const activePane = document.querySelector(".tab-pane.active");
+    if (activePane && activePane.id === "tab-overview") {
+      loadOverview();
+    }
   });
 }
 
