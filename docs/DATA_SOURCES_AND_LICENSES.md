@@ -15,7 +15,7 @@
 
 ## 2. Контрольные суммы SHA-256 первичных файлов
 Для обеспечения 100% научной воспроизводимости каждый исходный файл в директории `data/raw/` защищен криптографической контрольной суммой:
-* Полный реестр контрольных сумм хранится в: [`data/raw/checksums.json`](file:///D:/Projects/ZIZIPHUS_JUJUBA/data/raw/checksums.json) и [`data/raw/checksums.sha256`](file:///D:/Projects/ZIZIPHUS_JUJUBA/data/raw/checksums.sha256).
+* Полный реестр контрольных сумм хранится в: [`data/raw/checksums.json`](../data/raw/checksums.json) и [`data/raw/checksums.sha256`](../data/raw/checksums.sha256).
 
 ---
 

@@ -19,7 +19,7 @@ BASE_DIR = pathlib.Path(__file__).resolve().parent.parent.parent
 RAW_LOGS_DIR = BASE_DIR / "data/raw/github_repo/UVB-76-Structured-Signal-Analysis-main/data/raw"
 CLEANED_DIR = BASE_DIR / "data/cleaned"
 EXPORTS_DIR = BASE_DIR / "exports"
-DOWNLOADS_DIR = pathlib.Path("C:/Users/User/Downloads")
+DOWNLOADS_DIR = pathlib.Path.home() / "Downloads"
 EVENTS_FILE = BASE_DIR / "data/historical_events/events_2013_2014.json"
 
 def run_pipeline():
@@ -182,27 +182,31 @@ def run_pipeline():
     write_csv(EXPORTS_DIR / 'UVB76_crossword_number_links.csv', crossword_links, cw_fields)
     write_csv(CLEANED_DIR / 'UVB76_crossword_number_links.csv', crossword_links, cw_fields)
     
-    # Copy to Downloads as well so user's expectation is satisfied
-    for fname in [
-        'UVB76_full_messages.csv',
-        'UVB76_full_messages_deduplicated.csv',
-        'UVB76_duplicates_audit.csv',
-        'UVB76_repeated_numbers.csv',
-        'UVB76_repeated_numbers_deduplicated.csv',
-        'UVB76_crossword_number_links.csv'
-    ]:
-        write_csv(DOWNLOADS_DIR / fname, 
-                  audited_all if 'full_messages.csv' in fname else 
-                  primary_records if 'deduplicated.csv' in fname and 'full' in fname else
-                  auditor.audit_log if 'audit' in fname else
-                  repeated_all if 'repeated_numbers.csv' in fname else
-                  repeated_deduped if 'repeated_numbers_deduplicated.csv' in fname else
-                  crossword_links,
-                  msg_fields if 'full_messages' in fname else
-                  audit_fields if 'audit' in fname else
-                  cw_fields if 'crossword' in fname else rep_fields)
+    # Copy to user's Downloads directory if accessible
+    try:
+        if DOWNLOADS_DIR.exists():
+            for fname in [
+                'UVB76_full_messages.csv',
+                'UVB76_full_messages_deduplicated.csv',
+                'UVB76_duplicates_audit.csv',
+                'UVB76_repeated_numbers.csv',
+                'UVB76_repeated_numbers_deduplicated.csv',
+                'UVB76_crossword_number_links.csv'
+            ]:
+                write_csv(DOWNLOADS_DIR / fname, 
+                          audited_all if 'full_messages.csv' in fname else 
+                          primary_records if 'deduplicated.csv' in fname and 'full' in fname else
+                          auditor.audit_log if 'audit' in fname else
+                          repeated_all if 'repeated_numbers.csv' in fname else
+                          repeated_deduped if 'repeated_numbers_deduplicated.csv' in fname else
+                          crossword_links,
+                          msg_fields if 'full_messages' in fname else
+                          audit_fields if 'audit' in fname else
+                          cw_fields if 'crossword' in fname else rep_fields)
+    except Exception:
+        pass
         
-    print("CSV files exported to D:/Projects/ZIZIPHUS_JUJUBA/exports, data/cleaned, and C:/Users/User/Downloads.")
+    print(f"CSV files exported to {EXPORTS_DIR} and {CLEANED_DIR}.")
     
     # 8. Check specific target words: ЗИЗИФУС, ПАСКОИТ, ГАШЕНИЕ, НИЗКИЙ
     print("\n--- SIGNAL INTELLIGENCE TARGET VERIFICATION ---")

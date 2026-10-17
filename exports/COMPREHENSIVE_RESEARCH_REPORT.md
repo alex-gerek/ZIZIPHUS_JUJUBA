@@ -183,17 +183,17 @@ flowchart TD
 
 ## 7. РЕКОМЕНДАЦИИ ПО ВОСПРОИЗВЕДЕНИЮ
 
-1. База данных SQLite расположена по адресу: [`data/database/ziziphus_jujuba.db`](file:///D:/Projects/ZIZIPHUS_JUJUBA/data/database/ziziphus_jujuba.db).
+1. База данных SQLite расположена по адресу: [`data/database/ziziphus_jujuba.db`](data/database/ziziphus_jujuba.db).
 2. Запуск аналитических тестов:
    ```powershell
    python -m unittest discover tests
    ```
 3. Весь исходный код алгоритмов очистки и математических моделей открыт и воспроизводим:
-   * [`src/analysis/traffic_behavior.py`](file:///D:/Projects/ZIZIPHUS_JUJUBA/src/analysis/traffic_behavior.py)
-   * [`src/analysis/structural_analysis.py`](file:///D:/Projects/ZIZIPHUS_JUJUBA/src/analysis/structural_analysis.py)
-   * [`src/analysis/anomaly_detector.py`](file:///D:/Projects/ZIZIPHUS_JUJUBA/src/analysis/anomaly_detector.py)
-   * [`src/models/network_evolution.py`](file:///D:/Projects/ZIZIPHUS_JUJUBA/src/models/network_evolution.py)
-   * [`src/models/event_study_advanced.py`](file:///D:/Projects/ZIZIPHUS_JUJUBA/src/models/event_study_advanced.py)
+   * [`src/analysis/traffic_behavior.py`](src/analysis/traffic_behavior.py)
+   * [`src/analysis/structural_analysis.py`](src/analysis/structural_analysis.py)
+   * [`src/analysis/anomaly_detector.py`](src/analysis/anomaly_detector.py)
+   * [`src/models/network_evolution.py`](src/models/network_evolution.py)
+   * [`src/models/event_study_advanced.py`](src/models/event_study_advanced.py)
 
 ---
 *Лаборатория ZIZIPHUS JUJUBA, 2026. Все выводы получены на строго верифицированных первичных радиожурналах.*
