@@ -2074,14 +2074,14 @@ async function loadNetworkEvolution(epochId = 'epoch_2') {
         font: { size: 0 }
       },
       physics: {
-        stabilization: { iterations: 160 },
+        stabilization: { iterations: 200 },
         barnesHut: {
-          gravitationalConstant: -5500,
-          centralGravity: 0.22,
-          springLength: 160,
-          springConstant: 0.035,
-          damping: 0.09,
-          avoidOverlap: 0.8
+          gravitationalConstant: -3800,
+          centralGravity: 0.42,
+          springLength: 130,
+          springConstant: 0.045,
+          damping: 0.22,
+          avoidOverlap: 0.75
         }
       },
       interaction: {
